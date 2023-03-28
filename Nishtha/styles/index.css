@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 #logo_img{
     width:100%;
 }
-header{
+#Navbar{
     position:fixed;
-    z-index:9999;
 }
 .container-fluid{
     border: 1px solid red;
@@ -20,11 +20,11 @@ header{
 }
 .container-fluid>div{
     width: 10%;
-    border: 1px solid rgb(0, 255, 17);
+    /* border: 1px solid rgb(0, 255, 17); */
     align-items: center;
 }
 #img_div{
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 .fa-magnifying-glass{
     display:inline;
@@ -86,7 +86,6 @@ header{
         background: #ffffff;
         transition: 0.3s;
         width: 100vw;
-        height:100vh;
         z-index:-1;
         position: absolute;
   }
@@ -114,4 +113,83 @@ header{
   }
   input:checked +label svg.moon{
     fill: #fff;
+  }
+  #first_row{
+    display:flex;
+    width:90%;
+    margin: auto;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+  #first_row>div:nth-child(1){
+    width:30%;
+    /* border:1px solid green; */
+  }
+  #first_row>div:nth-child(2){
+    width:65%;
+    /* border:1px solid green; */
+  }
+  #first_row>div:nth-child(2)>img{
+    width:100%;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* margin-left:-80px; */
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+  }
+  .typedtext {
+    margin-top: 20%;
+    border-right: 2px solid black;
+    animation: blinkTextCursor 800ms steps(44) infinite normal;
+    height: 40px;
+    font-weight: 600;
+    line-height: 40px;
+    color: rgb(33, 33, 33);
+    /* margin-left: -30px; */
+    word-break: normal;
+    color: #000;
+    display: block;
+    font-family:IBMPlexMono, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: black;
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  #Api{
+    text-align: center;
+  }
+  #Api_content{
+    text-align:justify;
+  }
+  #email_div{
+    /* border: 1px solid red; */
+    display:flex;
+    justify-content: s
+  }
+  #email_div>div:nth-child(1){
+    width:60%;
+  }
+  #email_div>div:nth-child(2){
+    margin-left: -30px;
+    width:30%;
+  }
+  .mb-3{
+    color:white;
+    border-radius: 0%;
+    background: #FFB84C;
+  }
+  .form-control{
+    border-radius: 0%;
   }
