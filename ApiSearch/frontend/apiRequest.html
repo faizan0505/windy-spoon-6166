@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Api Request</title>
     <link rel="stylesheet" href="apiRequest.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div id="container">
@@ -32,7 +36,34 @@
           </div>
         </div>
         <div id="reponseAndReqData">
-          <div id="reqData"></div>
+          <div id="reqData">
+            <table>
+              <tr>
+                <td>Key</td>
+                <td>Value</td>
+                <td>Discription</td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td>
+                  <input type="text" /><i
+                    class="fa fa-trash-o"
+                    aria-hidden="true"
+                  ></i>
+                </td>
+              </tr>
+            </table>
+            <div id="insertRowDiv">
+              <i id="insertRowBtn" class="fa fa-plus"></i>
+            </div>
+          </div>
           <div id="response"></div>
         </div>
       </div>
