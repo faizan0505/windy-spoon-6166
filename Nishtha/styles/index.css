@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+#logo_img{
+    width:100%;
+}
+#Navbar{
+    position:fixed;
+    z-index: 9000;
+}
+.container-fluid{
+    border: 1px solid red;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#first_div{
+    display:flex;
+    width: 40%;
+}
+#first_div>div{
+    width:15%;
+}
+.container-fluid>div{
+    width: 10%;
+    /* border: 1px solid rgb(0, 255, 17); */
+    align-items: center;
+}
+#img_div{
+    /* border: 1px solid green; */
+}
+.fa-magnifying-glass{
+    display:inline;
+    margin-left: 10px;
+}
+#search_div{
+    width: 15%;
+}
+#search_div>button{
+    width: 100%;
+}
+
+#Label{
+    width:80px;
+    height:30px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: 0.3s
+}
+
+#Label:after {
+    content: "";
+    width:25px;
+    height: 25px;
+    position: absolute;
+    top: 2.5px;
+    left:3px;
+    background: linear-gradient(180deg,#ffcc89,#d8860b);
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s
+}
+  
+#darkmode-Toggle {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  #darkmode-Toggle:checked + #Label {
+    background: #242424;
+  }
+  
+  #darkmode-Toggle:checked + #Label:after {
+    left:80px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg,#777,#3a3a3a);
+  }
+  #Label, #Label:after {
+    transition: 0.3s
+  }
+  #Label:active:after{ 
+    width: 50px; 
+  }
+  #main{
+        background: #ffffff;
+        transition: 0.3s;
+        z-index:-1;
+        position: absolute;
+  }
+  #darkmode-Toggle:checked + #Label + #main{
+    background-color:#242424;
+  }
+  label svg{
+    position: absolute;
+    width: 25px;
+    top: 2px;
+    z-index: 100;
+  }
+  label svg.sun{
+    left:3px;
+    fill:white;
+    transition:0.3s;
+  }
+  label svg.moon{
+    left:55px;
+    fill:#7e7e7e;
+    transition:0.3s;
+  }
+  input:checked +label svg.sun{
+    fill: #7e7e7e;
+  }
+  input:checked +label svg.moon{
+    fill: #fff;
+  }
+  #first_row{
+    display:flex;
+    width:90%;
+    margin: auto;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+  #first_row>div:nth-child(1){
+    width:30%;
+    /* border:1px solid green; */
+  }
+  #first_row>div:nth-child(2){
+    width:65%;
+    /* border:1px solid green; */
+  }
+  #first_row>div:nth-child(2)>img{
+    width:100%;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* margin-left:-80px; */
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+  }
+  .typedtext {
+    margin-top: 20%;
+    border-right: 2px solid black;
+    animation: blinkTextCursor 800ms steps(44) infinite normal;
+    height: 40px;
+    font-weight: 600;
+    line-height: 40px;
+    color: rgb(33, 33, 33);
+    /* margin-left: -30px; */
+    word-break: normal;
+    color: #000;
+    display: block;
+    font-family:IBMPlexMono, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: black;
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  #Api{
+    text-align: center;
+  }
+  #Api_content{
+    text-align:justify;
+  }
+  #email_div{
+    /* border: 1px solid red; */
+    display:flex;
+    justify-content: s
+  }
+  #email_div>div:nth-child(1){
+    width:60%;
+  }
+  #email_div>div:nth-child(2){
+    margin-left: -30px;
+    width:30%;
+  }
+  .mb-3{
+    color:white;
+    border-radius: 0%;
+    background: #FFB84C;
+  }
+  .form-control{
+    border-radius: 0%;
+  }
+  #download_p{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    color: rgb(107, 107, 107);
+    word-break: normal;
+  }
+  #download{
+    display:flex;
+    justify-content: space-between;
+    width: 40%;
+  }
+  #second_row{
+    background-color: #F9F9F9;
+    width:100vw;
+    padding-bottom: 100px;
+  }
+  #second_row_1_div{
+    /* border:1px solid red; */
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+  }
+  #second_row_1_div>div{
+    width: 50%;
+    /* border:1px solid green; */
+    margin-top: 80px;
+  }
+  #second_row_1_div>div:nth-child(2){
+    margin-top: -80px;
+    width:30%;
+  }
+  #second_row_1_div>div:nth-child(2)>img{
+    width:80%;
+  }
+  #s_row_h1{
+    margin: 0px;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    word-break: normal;
+    font-size: 24px;
+    line-height: 1.2;
+    color: rgb(33, 33, 33);
+    letter-spacing: -0.72px;
+  }
+  #s_row_p{
+    margin: 0px;
+    color: rgb(107, 107, 107);
+    max-width: 80ch;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+
+  #s_s_1_div svg{
+    width: 40px;
+  }
+
+  #second_row_2_div{
+    padding-top: 50px;
+    width: 90%;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+  }
+  #second_row_2_div>div{
+    width:22%;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  .h_s_s_d{
+    margin: 0px;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    word-break: normal;
+    font-size: 16px;
+    line-height: 1.28;
+    color: rgb(33, 33, 33);
+    letter-spacing: -0.12px;
+  }
+.p_s_s_d{
+  font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    color: rgb(107, 107, 107);
+    word-break: normal;
+}
+
+#third_row{
+  width:70%;
+  /* border:1px solid red; */
+  margin:auto;
+  margin-top: 50px;
+}
+
+#Fourth_row{
+  margin-top: 50px;
+  width:100%;
+  background-color: #F9F9F9;
+  display:flex;
+  justify-content: space-between;
+}
+#Fourth_row>div{
+  padding: 40px;
+  width:40%;
+}
+#f_r_h{
+  margin: 0px;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    word-break: normal;
+    font-size: 26px;
+    line-height: 1.2;
+    color: rgb(33, 33, 33);
+    letter-spacing: -0.72px;
+}
+#f_r_p{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    color: rgb(107, 107, 107);
+    word-break: normal;
+}
+#third_row img{
+  width: 50%;
+  
+}
+.carousel{
+  width: 40%;
+  height: 200px;
+}
