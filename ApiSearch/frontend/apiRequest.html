@@ -10,6 +10,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("p").click(function () {
+          alert("You Clicked....");
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="container">
@@ -37,26 +45,28 @@
         </div>
         <div id="reponseAndReqData">
           <div id="reqData">
-            <table>
+            <table id="headersTable">
               <tr>
-                <td>Key</td>
-                <td>Value</td>
-                <td>Discription</td>
+                <th>Key</th>
+                <th>Value</th>
+                <th>Discription</th>
+                <th data-attr-ignore></th>
               </tr>
               <tr>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </tr>
-              <tr>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
+                <td contenteditable="true" data-text="Key"></td>
+                <td contenteditable="true" data-text="Value"></td>
+                <td contenteditable="true" data-text="Discription"></td>
                 <td>
-                  <input type="text" /><i
-                    class="fa fa-trash-o"
-                    aria-hidden="true"
-                  ></i>
+                  <i class="fa fa-trash-o rowDelete" aria-hidden="true"></i>
+                </td>
+              </tr>
+              <!-- hide -->
+              <tr class="hide">
+                <td contenteditable="true" data-text="Key"></td>
+                <td contenteditable="true" data-text="Value"></td>
+                <td contenteditable="true" data-text="Discription"></td>
+                <td>
+                  <i class="fa fa-trash-o rowDelete" aria-hidden="true"></i>
                 </td>
               </tr>
             </table>
