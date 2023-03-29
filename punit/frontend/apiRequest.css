@@ -1,0 +1,108 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+#container {
+  width: 80%;
+  margin: auto;
+}
+#main {
+  border: 1px solid red;
+}
+
+#request {
+  border: 1px solid green;
+}
+/* api method */
+#apiMethod {
+  border: 1px solid;
+}
+#apiMethod > form {
+  border: 1px solid orange;
+  width: 100%;
+}
+
+#apiMethod > form > select {
+  width: 100px;
+  font-size: 16px;
+  outline: none;
+}
+#apiMethod > form > input:nth-child(2) {
+  width: 82%;
+  font-size: 16px;
+  outline: none;
+}
+#apiMethod > form > input {
+  width: 100px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* requestTabs */
+#requestTabs {
+  margin-top: 20px;
+  display: flex;
+  gap: 30px;
+}
+#requestTabs > button {
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* **********************************************************reponseAndReqData*********************************************************** */
+#reponseAndReqData {
+  padding: 5px;
+}
+#reqData {
+  padding: 10px 5px;
+  height: 300px;
+}
+
+/*  **************************ReqData > headers************************  */
+table {
+  width: 100%;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: left;
+}
+td {
+  height: 27px;
+  word-break: break-all;
+  width: 200px;
+  max-width: 200px;
+  outline: none;
+}
+
+td:nth-child(4) {
+  width: 10px;
+  text-align: center;
+}
+td:nth-child(4) > i {
+  font-size: 20px;
+}
+.hide {
+  display: none;
+}
+[contentEditable="true"]:empty:not(:focus):before {
+  content: attr(data-text);
+}
+.rowDelete {
+  cursor: pointer;
+}
+#insertRowDiv {
+  text-align: center;
+  margin-top: 20px;
+}
+#insertRowBtn {
+  font-size: 15px;
+  padding: 2px 7px;
+  cursor: pointer;
+}
