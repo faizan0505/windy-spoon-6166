@@ -85,3 +85,8 @@ window.onscroll= function(){
     }
 }
 
+function border_none(){
+    let button=document.getElementById("b")
+    console.log("hi")
+    button.style.borderColor='color | transparent | inherit | initial'
+}
