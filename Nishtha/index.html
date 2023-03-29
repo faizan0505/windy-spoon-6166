@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Swiper library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Fontawesome library -->
+    <script src="https://kit.fontawesome.com/12a8246a20.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles//index.css">
+
+</head>
+
+<body>
+    <div id="main">
+        <header>
+            <nav id="Navbar" class="navbar navbar-expand-lg navbar-dark bg-light">
+                <div class="container-fluid">
+                    <div id="img_div">
+                        <a class="navbar-brand" href="#"><img id="logo_img" src="./images/API ACE LOGO.png" /></a>
+                    </div>
+                    <div id="first_div">
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                            <ul id="menu" class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Dropdown
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-light">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>Dropdown</div>
+
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Dropdown
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-light">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Dropdown
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-light">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="search_div">
+                        <button>Search API ACE<i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div><button>Sign In</button></div>
+                    <div><button>Signup</button></div>
+                    <div>
+                        <input type="checkbox" id="darkmode-Toggle" onclick="myTheme()" />
+                        <label for="darkmode-Toggle" id="Label">
+                            <svg viewBox="0 0 24 24" class="sun" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g id="Environment / Sun">
+                                        <path id="Vector"
+                                            d="M12 4V2M12 20V22M6.41421 6.41421L5 5M17.728 17.728L19.1422 19.1422M4 12H2M20 12H22M17.7285 6.41421L19.1427 5M6.4147 17.728L5.00049 19.1422M12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17Z"
+                                            stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="moon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g id="Environment / Moon">
+                                        <path id="Vector"
+                                            d="M9 6C9 10.9706 13.0294 15 18 15C18.9093 15 19.787 14.8655 20.6144 14.6147C19.4943 18.3103 16.0613 20.9999 12 20.9999C7.02944 20.9999 3 16.9707 3 12.0001C3 7.93883 5.69007 4.50583 9.38561 3.38574C9.13484 4.21311 9 5.09074 9 6Z"
+                                            stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </label>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="first_row">
+            <div>
+                <div class="content">
+                    <h1 class="typedtext"></h1>
+                </div>
+                <h4 id="Api">Always Here for your Requests</h4>
+                <p id="Api_content">Over 20 million developers use Postman. Get started by signing up or downloading the
+                    desktop app.</p>
+                <form id="email_div" class="row g-3">
+                    <div class="col-auto">
+                        <input type="password" class="form-control" id="inputPassword2"
+                            placeholder="jsmith@example.com">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-3" color="orange">Sign Up for Free</button>
+                    </div>
+                </form>
+                <p id="download_p">Download the desktop app for</p>
+                <div id="download">
+                    <div><i class="fa-brands fa-windows" style="font-size: 1.5em;"></i></div>
+                    <div><i class="fa-brands fa-apple" style="font-size: 1.5em;"></i></div>
+                    <div><i class="fa-brands fa-linux" style="font-size: 1.5em;"></i></div>
+                </div>
+            </div>
+            <div>
+                <img src="./images/header-graphic.png" />
+            </div>
+        </div>
+        <div id="second_row">
+            <div id="second_row_1_div">
+                <div>
+                    <h1 id="s_row_h1">What is API ACE?</h1>
+                    <p id="s_row_p">API ACE is an API platform for building and using APIs. Postman simplifies each step
+                        of the API lifecycle and streamlines collaboration so you can create better APIs—faster.</p>
+                </div>
+                <div>
+                    <img src="./images/homepage-header-illustration.3385ecf (1).png" />
+                </div>
+            </div>
+            <div id="second_row_2_div">
+                <div id="s_s_1_div">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0)">
+                            <path
+                                d="M23.979 18.979L29.257 24.257C29.6511 24.6509 29.9636 25.1186 30.1769 25.6334C30.3902 26.1481 30.4999 26.6998 30.4999 27.257C30.4999 27.8142 30.3902 28.3659 30.1769 28.8806C29.9636 29.3954 29.6511 29.8631 29.257 30.257C28.8631 30.651 28.3954 30.9636 27.8807 31.1769C27.3659 31.3901 26.8142 31.4999 26.257 31.4999C25.6998 31.4999 25.1481 31.3901 24.6334 31.1769C24.1186 30.9636 23.6509 30.651 23.257 30.257L18.312 25.312"
+                                fill="url(#paint0_linear)" />
+                            <path
+                                d="M23.979 18.979L29.257 24.257C29.6511 24.6509 29.9636 25.1186 30.1769 25.6334C30.3902 26.1481 30.4999 26.6998 30.4999 27.257C30.4999 27.8142 30.3902 28.3659 30.1769 28.8806C29.9636 29.3954 29.6511 29.8631 29.257 30.257C28.8631 30.651 28.3954 30.9636 27.8807 31.1769C27.3659 31.3901 26.8142 31.4999 26.257 31.4999C25.6998 31.4999 25.1481 31.3901 24.6334 31.1769C24.1186 30.9636 23.6509 30.651 23.257 30.257L18.312 25.312"
+                                stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.139 13.139L5.5 3.5L2.5 6.5L12.001 16.001" fill="url(#paint1_linear)" />
+                            <path d="M15.139 13.139L5.5 3.5L2.5 6.5L12.001 16.001" stroke="#6B6B6B" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M31.1341 5.866L27.5001 9.5L23.5001 5.5L27.1341 1.866C26.0066 1.47135 24.792 1.39554 23.6242 1.64691C22.4564 1.89828 21.3807 2.46708 20.5154 3.29066C19.6502 4.11425 19.029 5.16066 18.7203 6.31465C18.4117 7.46864 18.4275 8.68543 18.7661 9.831L2.15206 24.984C1.9523 25.1662 1.79158 25.3871 1.67959 25.6332C1.56761 25.8793 1.50669 26.1456 1.50052 26.4159C1.49435 26.6862 1.54306 26.955 1.6437 27.2059C1.74434 27.4569 1.89483 27.6848 2.08606 27.876L5.12406 30.914C5.31522 31.1052 5.54316 31.2557 5.79413 31.3564C6.04509 31.457 6.31385 31.5057 6.58417 31.4995C6.85449 31.4934 7.12076 31.4324 7.36687 31.3205C7.61298 31.2085 7.83382 31.0478 8.01606 30.848L23.1691 14.234C24.3147 14.5737 25.532 14.5904 26.6866 14.2821C27.8411 13.9739 28.8881 13.3527 29.712 12.4871C30.5359 11.6215 31.1047 10.5452 31.3556 9.37686C31.6065 8.2085 31.5299 6.99354 31.1341 5.866V5.866Z"
+                                stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="24.406" y1="18.979" x2="24.406" y2="31.4999"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F9984D" />
+                                <stop offset="1" stop-color="#EFB563" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear" x1="8.8195" y1="3.5" x2="8.8195" y2="16.001"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F9984D" />
+                                <stop offset="1" stop-color="#EFB563" />
+                            </linearGradient>
+                            <clipPath id="clip0">
+                                <rect width="32" height="32" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <h3 class="h_s_s_d">API Tools</h3>
+                    <p class="p_s_s_d">A comprehensive set of tools that help accelerate the API Lifecycle - from
+                        design, testing,
+                        documentation, and mocking to discovery.</p>
+                </div>
+                <div>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0)">
+                            <path
+                                d="M16.5 31.5C18.1569 31.5 19.5 30.1569 19.5 28.5C19.5 26.8431 18.1569 25.5 16.5 25.5C14.8431 25.5 13.5 26.8431 13.5 28.5C13.5 30.1569 14.8431 31.5 16.5 31.5Z"
+                                stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M5.5 29.5C7.15685 29.5 8.5 28.1569 8.5 26.5C8.5 24.8431 7.15685 23.5 5.5 23.5C3.84315 23.5 2.5 24.8431 2.5 26.5C2.5 28.1569 3.84315 29.5 5.5 29.5Z"
+                                stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M27.5 29.5C29.1569 29.5 30.5 28.1569 30.5 26.5C30.5 24.8431 29.1569 23.5 27.5 23.5C25.8431 23.5 24.5 24.8431 24.5 26.5C24.5 28.1569 25.8431 29.5 27.5 29.5Z"
+                                stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M7.723 12.5C7.42411 11.1824 7.42569 9.81439 7.72765 8.49749C8.0296 7.1806 8.62416 5.94859 9.46724 4.89284C10.3103 3.83709 11.3803 2.9847 12.5977 2.3989C13.8152 1.81309 15.1489 1.50891 16.5 1.50891C17.8511 1.50891 19.1848 1.81309 20.4023 2.3989C21.6197 2.9847 22.6897 3.83709 23.5328 4.89284C24.3758 5.94859 24.9704 7.1806 25.2724 8.49749C25.5743 9.81439 25.5759 11.1824 25.277 12.5"
+                                stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M16.5 14.5C18.7091 14.5 20.5 12.7091 20.5 10.5C20.5 8.29086 18.7091 6.5 16.5 6.5C14.2909 6.5 12.5 8.29086 12.5 10.5C12.5 12.7091 14.2909 14.5 16.5 14.5Z"
+                                fill="url(#paint0_linear)" stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M5.5 23.5V19.5L9.5 16.5" stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M27.5 23.5V19.5L23.5 16.5" stroke="#6B6B6B" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16.5 25.5V19.5" stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="16.5" y1="6.5" x2="16.5" y2="14.5"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F9984D" />
+                                <stop offset="1" stop-color="#EFB563" />
+                            </linearGradient>
+                            <clipPath id="clip0">
+                                <rect width="32" height="32" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <h3 class="h_s_s_d">API Repository</h3>
+                    <p class="p_s_s_d">Easily store, iterate and collaborate around all your API artifacts on one
+                        central platform used
+                        across teams.</p>
+                </div>
+                <div>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5 2.5H2.5V13.5H13.5V2.5Z" fill="url(#paint0_linear)" stroke="#6B6B6B"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M30.5 2.5H19.5V13.5H30.5V2.5Z" stroke="#6B6B6B" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M13.5 19.5H2.5V30.5H13.5V19.5Z" stroke="#6B6B6B" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M30.5 19.5H19.5V30.5H30.5V19.5Z" fill="url(#paint1_linear)" stroke="#6B6B6B"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="8" y1="2.5" x2="8" y2="13.5"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F9984D" />
+                                <stop offset="1" stop-color="#EFB563" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear" x1="25" y1="19.5" x2="25" y2="30.5"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F9984D" />
+                                <stop offset="1" stop-color="#EFB563" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h3 class="h_s_s_d">Workspaces</h3>
+                    <p class="p_s_s_d">Organize your API work and collaborate with teammates across your organization or
+                        stakeholders
+                        across the world.</p>
+                </div>
+                <div>
+                    <svg id="Layer_1" style="width:40px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                }
+
+                                .cls-1,
+                                .cls-2,
+                                .cls-3 {
+                                    stroke: #6b6b6b;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.5px;
+                                }
+
+                                .cls-2 {
+                                    fill: url(#linear-gradient);
+                                }
+
+                                .cls-3 {
+                                    fill: url(#linear-gradient-2);
+                                }
+                            </style>
+                            <linearGradient id="linear-gradient" x1="3.37" y1="7.82" x2="44.9" y2="7.82"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#ee7c48" />
+                                <stop offset="1" stop-color="#edaa52" />
+                            </linearGradient>
+                            <linearGradient id="linear-gradient-2" x1="6.25" y1="44.32" x2="42.02" y2="44.32"
+                                xlink:href="#linear-gradient" />
+                        </defs>
+                        <rect class="cls-1" x="7.25" y="17.1" width="6.77" height="23.5" />
+                        <rect class="cls-1" x="20.75" y="17.1" width="6.77" height="23.5" />
+                        <rect class="cls-1" x="34.25" y="17.1" width="6.77" height="23.5" />
+                        <polygon class="cls-2" points="3.37 13.5 44.9 13.5 25.23 2.13 3.37 13.5" />
+                        <polygon class="cls-1" points="3.37 13.5 44.9 13.5 25.23 2.13 3.37 13.5" />
+                        <line class="cls-3" x1="6.25" y1="44.32" x2="42.02" y2="44.32" />
+                    </svg>
+                    <h3 class="h_s_s_d">Governance</h3>
+                    <p class="p_s_s_d">Improve the quality of APIs with governance rules that ensure APIs are designed,
+                        built, tested, and distributed meeting organizational standards.</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="third_row">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <!-- <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol> -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="./images/download.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./images/api-working-1024x377-1.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./images/6178dbe503b4f32393a09f07_API Management functions.png" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div id="Fourth_row">
+            <div>
+                <h3 id="f_r_h">The future is API-first</h3>
+                <p id="f_r_p">At API ACE, we believe the future will be built with APIs. The API-first World graphic novel tells the story of how and why the API-first world is coming to be.</p>
+            </div>
+            <div>
+                <img src="./images/homepage-api-first-world-large-3cd0298fa1384a3a8953facd311db66c.png">
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
