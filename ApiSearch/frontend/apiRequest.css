@@ -3,10 +3,12 @@
   padding: 0%;
   box-sizing: border-box;
 }
+
 #container {
   width: 80%;
   margin: auto;
 }
+
 #main {
   border: 1px solid red;
 }
@@ -14,26 +16,30 @@
 #request {
   border: 1px solid green;
 }
+
 /* api method */
 #apiMethod {
   border: 1px solid;
 }
-#apiMethod > form {
+
+#apiMethod>form {
   border: 1px solid orange;
   width: 100%;
 }
 
-#apiMethod > form > select {
+#apiMethod>form>select {
   width: 100px;
   font-size: 16px;
   outline: none;
 }
-#apiMethod > form > input:nth-child(2) {
+
+#apiMethod>form>input:nth-child(2) {
   width: 82%;
   font-size: 16px;
   outline: none;
 }
-#apiMethod > form > input {
+
+#apiMethod>form>input {
   width: 100px;
   font-size: 16px;
   outline: none;
@@ -45,32 +51,37 @@
   display: flex;
   gap: 30px;
 }
-#requestTabs > button {
+
+#requestTabs>button {
   border: none;
   background-color: white;
+  padding: 1%;
   font-size: 16px;
   cursor: pointer;
 }
 
-/* reponseAndReqData */
 #reponseAndReqData {
   padding: 5px;
 }
-#reqData {
+
+ #reqData {
   padding: 10px 5px;
   height: 300px;
+  overflow-y:auto;
+  /* border: 2px solid black; */
 }
 
-/*  ReqData > headers  */
 table {
   width: 100%;
 }
+
 table,
 td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 5px;
 }
+
 td {
   height: 27px;
   white-space: pre-wrap;
@@ -79,7 +90,8 @@ td {
   max-width: 200px;
   outline: none;
 }
-td > input {
+
+td>input {
   width: 90%;
   border: none;
   outline: none;
@@ -89,8 +101,47 @@ td > input {
   text-align: center;
   margin-top: 20px;
 }
+
 #insertRowBtn {
   font-size: 15px;
   padding: 2px 7px;
   cursor: pointer;
+}
+
+.editor {
+  display: inline-flex;
+  gap: 10px;
+  width: 100%;
+  font-family: monospace;
+  line-height: 21px;
+  background-color: #282a3a;
+  border-radius: 2px;
+ 
+}
+
+textarea {
+  line-height: 21px;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  color: #FFF;
+  outline: none;
+  resize: none;
+  width: 100%;
+}
+
+.line-numbers {
+  width: 20px;
+  text-align: right;
+}
+
+.line-numbers span {
+  counter-increment: linenumber;
+}
+
+.line-numbers span::before {
+  content: counter(linenumber);
+  display: block;
+  color: orange;
+  font-size: medium;
 }
