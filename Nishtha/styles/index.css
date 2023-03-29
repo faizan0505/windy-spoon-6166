@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 #logo_img{
     width:100%;
 }
@@ -284,4 +285,50 @@
     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
     color: rgb(107, 107, 107);
     word-break: normal;
+}
+
+#third_row{
+  width:70%;
+  /* border:1px solid red; */
+  margin:auto;
+  margin-top: 50px;
+}
+
+#Fourth_row{
+  margin-top: 50px;
+  width:100%;
+  background-color: #F9F9F9;
+  display:flex;
+  justify-content: space-between;
+}
+#Fourth_row>div{
+  padding: 40px;
+  width:40%;
+}
+#f_r_h{
+  margin: 0px;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    word-break: normal;
+    font-size: 26px;
+    line-height: 1.2;
+    color: rgb(33, 33, 33);
+    letter-spacing: -0.72px;
+}
+#f_r_p{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    color: rgb(107, 107, 107);
+    word-break: normal;
+}
+#third_row img{
+  width: 50%;
+  
+}
+.carousel{
+  width: 40%;
+  height: 200px;
 }

@@ -16,6 +16,7 @@ function myTheme(){
 }
 
 
+
 function typingEffect() {
     const contactTexts = shuffleArray(['Build', 'Debug', 'Monitor','Publish']);
     const typedtext = document.getElementsByClassName("typedtext")[0];
@@ -80,3 +81,4 @@ window.onscroll= function(){
         navbar.classList.remove("sticky");
     }
 }
+
