@@ -324,11 +324,23 @@
     color: rgb(107, 107, 107);
     word-break: normal;
 }
+#third_row{
+  width:80%;
+  border:1px solid red;
+  margin:auto;
+  align-items: center;
+  margin-top: 50px;
+  display:flex;
+}
 #third_row img{
+  margin-top: 10%;
   width: 50%;
-  
 }
 .carousel{
   width: 40%;
-  height: 200px;
+  height: 300px;
+  border:1px solid red;
+}
+.card-body{
+  width: 200px;
 }
