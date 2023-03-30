@@ -59,6 +59,7 @@
 #reqData {
   padding: 10px 5px;
   height: 300px;
+  overflow: auto;
 }
 
 /*  **************************ReqData > headers************************  */
@@ -105,4 +106,44 @@ td:nth-child(4) > i {
   font-size: 15px;
   padding: 2px 7px;
   cursor: pointer;
+}
+
+/*************************************** ReqData > JSON and TEXT section ******************************************/
+
+.editor {
+  display: inline-flex;
+  gap: 10px;
+  width: 100%;
+  font-family: monospace;
+  line-height: 21px;
+  background-color: #282a3a;
+  border-radius: 2px;
+ 
+}
+
+textarea {
+  line-height: 21px;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  color: #FFF;
+  outline: none;
+  resize: none;
+  width: 100%;
+}
+
+.line-numbers {
+  width: 20px;
+  text-align: right;
+}
+
+.line-numbers span {
+  counter-increment: linenumber;
+}
+
+.line-numbers span::before {
+  content: counter(linenumber);
+  display: block;
+  color: orange;
+  font-size: medium;
 }
