@@ -11,7 +11,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background:  linear-gradient(0deg, rgb(153, 255, 0) 50%, rgb(247, 130, 13) 100%);
+  background:  linear-gradient(0deg, rgb(153, 255, 0) 50%, rgb(250, 190, 61) 100%);
 }
 
 html::-webkit-scrollbar-thumb {
@@ -466,4 +466,37 @@ overflow-y: auto; /*for vertical scroll bar*/
   width:60%;
 }
 
+#footer{
+  border:1px solid red;
+  display:flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+#footer>div{
+  border: 1px solid green;
+}
+#footer>div:nth-child(1){
+  width:30%;
+}
+#footer>div:nth-child(2){
+  width:70%;
+  display:flex;
+  justify-content: space-around;
+}
+#footer>div:nth-child(2)>div{
+  border: 1px solid yellow;
+  
+}
+#footer>div:nth-child(2) ul{
+  text-align: center;
+  margin-left:-100px;
+}
+.footer_img{
+  margin: 15%;
+  width: 200px;
+  height: 220px;
+}
+#footer>div:nth-child(2) li{
+  list-style: none;
+}
 
