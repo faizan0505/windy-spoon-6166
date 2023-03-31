@@ -2,23 +2,25 @@
 
 let noneBtn = document.querySelector("#noneBtn");
 let jsonBtn = document.querySelector("#jsonBtn");
-let textBtn = document.querySelector("#textBtn");
 let headersBtn = document.querySelector("#headersBtn");
 
 let reqDataDiv = document.querySelector("#reqData");
 
 // ****************************************************None section****************************************************************
+function initialNoneBtnColor() {
+  noneBtn.style.backgroundColor = "orange";
+}
+
+initialNoneBtnColor();
 noneBtn.addEventListener("click", () => {
   // style
   reqDataDiv.innerHTML = null;
   noneBtn.style.backgroundColor = "orange";
   noneBtn.style.color = "white";
   jsonBtn.style.backgroundColor = "white";
-  textBtn.style.backgroundColor = "white";
   headersBtn.style.backgroundColor = "white";
 
   jsonBtn.style.color = "black";
-  textBtn.style.color = "black";
   headersBtn.style.color = "black";
 
   // adding content
@@ -33,11 +35,9 @@ headersBtn.addEventListener("click", () => {
   headersBtn.style.color = "white";
 
   jsonBtn.style.backgroundColor = "white";
-  textBtn.style.backgroundColor = "white";
   noneBtn.style.backgroundColor = "white";
 
   jsonBtn.style.color = "black";
-  textBtn.style.color = "black";
   noneBtn.style.color = "black";
 
   // content
@@ -92,60 +92,14 @@ jsonBtn.addEventListener("click", () => {
   jsonBtn.style.color = "white";
 
   headersBtn.style.backgroundColor = "white";
-  textBtn.style.backgroundColor = "white";
+
   noneBtn.style.backgroundColor = "white";
 
   noneBtn.style.color = "black";
-  textBtn.style.color = "black";
+
   headersBtn.style.color = "black";
 
   // e.preventDefault();
-  reqDataDiv.innerHTML = null;
-  reqDataDiv.innerHTML = `<div class="editor">
-  <div class="line-numbers">
-      <span></span>
-  </div>
-  <textarea id="requestBody"></textarea>
-</div>`;
-  const textarea = document.querySelector("textarea");
-  const lineNumbers = document.querySelector(".line-numbers");
-
-  textarea.addEventListener("keyup", (event) => {
-    const numberOfLines = event.target.value.split("\n").length;
-
-    lineNumbers.innerHTML = Array(numberOfLines).fill("<span></span>").join("");
-  });
-
-  textarea.addEventListener("keydown", (event) => {
-    if (event.key === "Tab") {
-      const start = textarea.selectionStart;
-      const end = textarea.selectionEnd;
-
-      textarea.value =
-        textarea.value.substring(0, start) +
-        "\t" +
-        textarea.value.substring(end);
-
-      event.preventDefault();
-    }
-  });
-});
-
-// ****************************************************Text section****************************************************************
-textBtn.addEventListener("click", () => {
-  textBtn.style.backgroundColor = "orange";
-  textBtn.style.color = "white";
-
-  jsonBtn.style.backgroundColor = "white";
-  headersBtn.style.backgroundColor = "white";
-  noneBtn.style.backgroundColor = "white";
-
-  jsonBtn.style.color = "black";
-  noneBtn.style.color = "black";
-  headersBtn.style.color = "black";
-
-  // e.preventDefault();
-
   reqDataDiv.innerHTML = null;
   reqDataDiv.innerHTML = `<div class="editor">
   <div class="line-numbers">
@@ -184,6 +138,11 @@ let sendBtn = document.querySelector("#sendBtn");
 
 sendBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  // ********************** Data from url And Method Form **********************************
+  let urlAndMethodForm = document.querySelector("#urlAndMethodForm");
+  let method = urlAndMethodForm.methods.value;
+  let url = urlAndMethodForm.apiSearch.value;
+
   // *********************getting data from reqData section**********************************
 
   // **************************getting data from headers*************************************
@@ -207,8 +166,8 @@ sendBtn.addEventListener("click", (e) => {
 
     headersData.push(h);
   });
+  let keyValueObj = {};
   if (headersData.length > 0) {
-    let keyValueObj = {};
     headersData.forEach((elem) => {
       keyValueObj[elem["key"]] = elem["value"];
     });
@@ -216,16 +175,43 @@ sendBtn.addEventListener("click", (e) => {
   }
 
   // ******************************getting data from JSON********************************
+  let jsonData = null;
   if (document.getElementById("requestBody") != null) {
-    let jsonData = JSON.parse(document.getElementById("requestBody").value);
+    jsonData = document.getElementById("requestBody").value;
+
+    function isJson(jsonData) {
+      try {
+        JSON.parse(jsonData);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    if (isJson(jsonData) === false) {
+      alert("Invalid body type or Invalid JSON type ❌");
+    }
+
+    jsonData = JSON.parse(document.getElementById("requestBody").value);
 
     if (typeof jsonData !== "object" || Array.isArray(jsonData)) {
-      console.log("Invalid body type");
+      // Some Logic Here..
       alert("Invalid body type or Invalid JSON type ❌");
     } else {
       console.log(jsonData);
+      alert("Got correct JSON data ✅");
     }
+  }
+
+  // sending data to curd function
+  if (url == "") {
+    alert("please provide URL");
+  } else {
+    curdFunction(method, url, jsonData, keyValueObj);
   }
 });
 
 // crud operations
+function curdFunction(method, url, jsonData, keyValueObj) {
+  console.log(method, url, jsonData, keyValueObj);
+}
