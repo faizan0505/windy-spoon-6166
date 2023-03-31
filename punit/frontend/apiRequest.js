@@ -6,6 +6,10 @@ let headersBtn = document.querySelector("#headersBtn");
 
 let reqDataDiv = document.querySelector("#reqData");
 
+// value of JSON and headers to show and store data.
+let keyValueObj = {};
+let jsonData = [];
+
 // ****************************************************None section****************************************************************
 function initialNoneBtnColor() {
   noneBtn.style.backgroundColor = "orange";
@@ -41,6 +45,28 @@ headersBtn.addEventListener("click", () => {
   noneBtn.style.color = "black";
 
   // content
+  let HeadersTR = null;
+  if (Object.keys(keyValueObj).length === 0) {
+    HeadersTR = `<tr>
+                <td contenteditable="true" data-text="Key"></td>
+                <td contenteditable="true" data-text="Value"></td>
+                <td contenteditable="true" data-text="Discription"></td>
+                <td>
+                  <i class="fa fa-trash-o rowDelete" aria-hidden="true"></i>
+                </td>
+              </tr>`;
+  } else {
+    for (key in keyValueObj) {
+      HeadersTR += `<tr>
+                <td contenteditable="true" data-text=${key}></td>
+                <td contenteditable="true" data-text=${keyValueObj[key]}></td>
+                <td contenteditable="true" data-text="Discription"></td>
+                <td>
+                  <i class="fa fa-trash-o rowDelete" aria-hidden="true"></i>
+                </td>
+              </tr>`;
+    }
+  }
   reqDataDiv.innerHTML = `<table id="headersTable">
               <tr>
                 <th>Key</th>
@@ -48,14 +74,7 @@ headersBtn.addEventListener("click", () => {
                 <th>Discription</th>
                 <th data-attr-ignore></th>
               </tr>
-              <tr>
-                <td contenteditable="true" data-text="Key"></td>
-                <td contenteditable="true" data-text="Value"></td>
-                <td contenteditable="true" data-text="Discription"></td>
-                <td>
-                  <i class="fa fa-trash-o rowDelete" aria-hidden="true"></i>
-                </td>
-              </tr>
+              ${HeadersTR}
               <!-- hide -->
               <tr class="hide">
                 <td contenteditable="true" data-text="Key"></td>
@@ -76,7 +95,6 @@ headersBtn.addEventListener("click", () => {
 function headersTableFunc() {
   var $reqData = $("#reqData");
   $("#insertRowBtn").click(function () {
-    console.log("clicked");
     var $clone = $reqData.find("tr.hide").clone(true).removeClass("hide");
     $reqData.find("table").append($clone);
   });
@@ -155,27 +173,26 @@ sendBtn.addEventListener("click", (e) => {
     .each(function () {
       keys.push($(this).text().toLowerCase());
     });
-
   $rows.each(function () {
     var $td = $(this).find("td");
     var h = {};
-
+    console.log($td);
     keys.forEach(function (header, i) {
       h[header] = $td.eq(i).text();
     });
 
     headersData.push(h);
   });
-  let keyValueObj = {};
   if (headersData.length > 0) {
     headersData.forEach((elem) => {
-      keyValueObj[elem["key"]] = elem["value"];
+      if (elem["key"] != "") {
+        keyValueObj[elem["key"]] = elem["value"];
+      }
     });
     console.log(keyValueObj);
   }
 
   // ******************************getting data from JSON********************************
-  let jsonData = null;
   if (document.getElementById("requestBody") != null) {
     jsonData = document.getElementById("requestBody").value;
 
@@ -195,11 +212,8 @@ sendBtn.addEventListener("click", (e) => {
     jsonData = JSON.parse(document.getElementById("requestBody").value);
 
     if (typeof jsonData !== "object" || Array.isArray(jsonData)) {
-      // Some Logic Here..
+      jsonData = [];
       alert("Invalid body type or Invalid JSON type ❌");
-    } else {
-      console.log(jsonData);
-      alert("Got correct JSON data ✅");
     }
   }
 
