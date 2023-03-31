@@ -19,8 +19,8 @@
 
 <body>
     <div id="main">
-        <header>
-            <nav id="Navbar" class="navbar navbar-expand-lg navbar-dark bg-light">
+        <header style="background-color: red">
+            <nav id="Navbar" class="navbar navbar-expand-lg navbar-white bg-white">
                 <div class="container-fluid">
                     <div id="img_div">
                         <a class="navbar-brand" href="#"><img id="logo_img" src="./images/API ACE LOGO.png" /></a>
@@ -29,31 +29,17 @@
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                             <ul id="menu" class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
+                                    <button class="btn btn-white dropdown-toggle" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        Dropdown
+                                        Product
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-light">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>Dropdown</div>
-
-                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                            <ul class="navbar-nav">
-                                <li class="nav-item dropdown">
-                                    <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Dropdown
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-light">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <ul class="dropdown-menu dropdown-menu-white">
+                                        <li><a class="dropdown-item" href="#">What is API ACE?</a></li>
+                                        <li><a class="dropdown-item" href="#">API repository</a></li>
+                                        <li><a class="dropdown-item" href="#">Tools</a></li>
+                                        <li><a class="dropdown-item" href="#">Governance</a></li>
+                                        <li><a class="dropdown-item" href="#">Workspaces</a></li>
+                                        <li><a class="dropdown-item" href="#">Integrations</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -61,26 +47,29 @@
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
+                                    <button class="btn btn-white dropdown-toggle" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        Dropdown
+                                        Enterprise
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-light">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <ul class="dropdown-menu dropdown-menu-white">
+                                        <li><a class="dropdown-item" href="#">API ACE Enterprise</a></li>
+                                        <li><a class="dropdown-item" href="#">Customers</a></li>
+                                        <li><a class="dropdown-item" href="#">Contact sales</a></li>
                                     </ul>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                                    <button  style="margin:auto" data-bs-toggle="dropdown" aria-expanded="false">Explore</button>
                         </div>
                     </div>
 
                     <div id="search_div">
-                        <button>Search API ACE<i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button style="background-color: white;">Search API ACE<i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
-                    <div><button>Sign In</button></div>
-                    <div><button>Signup</button></div>
-                    <div>
+                    <div><button id="signin_btn" >Sign In</button></div>
+                    <div><button id="signup_btn" >Sign Up for Free</button></div>
+                    <div id="Darkmode">
                         <input type="checkbox" id="darkmode-Toggle" onclick="myTheme()" />
                         <label for="darkmode-Toggle" id="Label">
                             <svg viewBox="0 0 24 24" class="sun" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,6 +98,11 @@
                             </svg>
                         </label>
                     </div>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </nav>
         </header>
@@ -547,6 +541,9 @@
                 </div>
             </div>
         </div>
+
+
+
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"

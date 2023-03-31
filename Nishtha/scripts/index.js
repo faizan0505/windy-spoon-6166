@@ -9,13 +9,20 @@ function myTheme(){
         body.style.background = "#4D4D4D";
         second_row.style.background = "#4D4D4D";
       }else{
-        body.style.background = "white";
+        body.style.background = "#FFFFFF";
         second_row.style.background = "#F9F9F9";
 
       }
 }
 
 
+const hamburger= document.querySelector(".hamburger");
+const navmenu= document.querySelector(".container-fluid")
+
+hamburger.addEventListener("click",()=>{
+    hamburger.classList.toggle("active");
+    navmenu.classList.toggle("active");
+})
 
 
 
