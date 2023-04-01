@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Postmaster - Sign In</title>
-    
-    <link rel="stylesheet" href="login.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-  </head>
-  <body>
-    <header></header>
-    <div class="container">
-      <img
-        class="logo"
-        width="8%"
-        src="https://i.postimg.cc/bNCv2kcM/Whats-App-Image-2023-02-21-at-3-18-26-PM-removebg-preview.png"
-        alt=""
-      />
 
-      <div class="part">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API-ACE - Sign In</title>
+
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+  <header></header>
+  <div class="cont">
+    <img class="logo" src="fzn-img/API ACE LOGO.png" alt="" />
+
+    <div class="part">
+      <div id="left">
+        <div class="googleoauth">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google"> -->
+          <button class="gbtn">Sign in with Google</button>
+        </div>
+        <h3 class="c">or</h3>
+        <div class="gitoauth">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"> -->
+          <button class="gitbtn">Sign in with GitHub</button>
+        </div>
         <div>
-          <span class="head"> Sign In</span>
-          <span class="body">
-            <a href="signup.html"> Create Account </a>instead?</span
-          >
+          <h2>Why sign up/Log in?</h2>
+          <ul>
+            <li>Organize all your API development within Api Ace Workspaces</li> <br>
+            <li>Sync your Api data across devices</li> <br>
+            <li>Backup your data to the Ace clould</li> <br>
+            <li>It's free!</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div id="right">
+        <div>
+          <h2>Log In</h2>
+          <div>
+            <h3><a href="signup.html">Create Account</a></h3><span style="white-space: pre;"> instead?</span>
+          </div>
         </div>
         <p>Email</p>
-        <input id="email" type="text" required />
+        <input id="email" type="text" placeholder="Enter Email" required />
 
         <p>Password</p>
-        <input id="password" type="password" required />
+        <input id="password" type="password" placeholder="Enter Password" required />
 
-        <div>
-          <p class="body">Stay signed in for 30 days</p>
-          <a href="">forgot password?</a>
+        <div id="for">
+          <p>Stay signed in for 30 days</p>
+          <h3><a href="">forgot password?</a></h3>
         </div>
-
+        <br>
         <button class="btn">Sign in</button>
-        <p class="c">or</p>
-        <button class="gbtn">Sign in with Google</button>
-
-        <button class="sbtn">Sign in SSO</button>
       </div>
     </div>
-  </body>
+</body>
+
 </html>
 
 <script src="login.js"></script>
