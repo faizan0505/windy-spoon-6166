@@ -27,7 +27,7 @@ let register = async () => {
       password,
     };
 
-    await fetch("http://localhost:4300/signup", {
+    await fetch("http://localhost:4500/signup", {
       method: 'POST',
       headers: {
         "Content-type": "application/json"
@@ -67,7 +67,7 @@ let logindata = async () => {
     password
   }
 
-  const fetchedData = await fetch("http://localhost:4300/login", {
+  const fetchedData = await fetch("http://localhost:4500/login", {
     method: "POST",
     headers: {
       "Content-type": "application/json"
