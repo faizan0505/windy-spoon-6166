@@ -18,6 +18,8 @@ let jsonData = [];
 // ****************************************************None section****************************************************************
 function initialNoneBtnColor() {
   noneBtn.style.backgroundColor = "orange";
+  noneBtn.style.color = "white";
+  noneBtn.style.padding = "5px";
 }
 
 initialNoneBtnColor();
@@ -39,7 +41,7 @@ noneBtn.addEventListener("click", () => {
 // ****************************************************Headers section****************************************************************
 headersBtn.addEventListener("click", () => {
   // style
-  reqDataDiv.innerHTML = null;
+  // reqDataDiv.innerHTML = null;
   headersBtn.style.backgroundColor = "orange";
   headersBtn.style.color = "white";
 
@@ -167,6 +169,8 @@ sendBtn.addEventListener("click", (e) => {
   let method = urlAndMethodForm.methods.value;
   let url = urlAndMethodForm.apiSearch.value;
 
+  // let time = Date.now() - performance.now()
+
   // *********************getting data from reqData section**********************************
 
   // **************************getting data from headers*************************************
@@ -226,18 +230,21 @@ sendBtn.addEventListener("click", (e) => {
     }
   }
 
-  // sending data to curd function
+  // sending data to crud function
   if (url == "") {
     alert("please provide URL");
   } else {
-    curdFunction(method, url);
+    crudFunction(method, url);
   }
 });
 
 // crud operations
-async function curdFunction(method, url) {
+
+async function crudFunction(method, url) {
   console.log(method, url, jsonData, keyValueObj);
+
   // seting headers data
+
   let headers = { "Content-Type": "application/json" };
   if (Object.keys(keyValueObj).length != 0) {
     for (key in keyValueObj) {
@@ -246,13 +253,35 @@ async function curdFunction(method, url) {
   }
 
   // getting body data
+
   let body = {};
   let outputData;
   let status;
+  let timeTaken;
+  let fetchURL;
+  let startTime = performance.now();
   if (method == "GET") {
-    let fetchURL = await fetch(url, {
+    fetchURL = await fetch(url, {
       method: method,
       headers: headers,
+    });
+
+    // getting output data
+
+    outputData = await fetchURL.headers.get("content-type").split(";");
+    console.log(await fetchURL.headers.get("content-type").split(";"));
+    if (outputData[0] == "text/html") {
+      status = fetchURL.status;
+      outputData = await fetchURL.text();
+    } else {
+      status = fetchURL.status;
+      outputData = await fetchURL.json();
+    }
+  } else {
+    fetchURL = await fetch(url, {
+      method: method,
+      headers: headers,
+      body: jsonData,
     });
     // getting output data
     outputData = await fetchURL.headers.get("content-type").split(";");
@@ -264,24 +293,38 @@ async function curdFunction(method, url) {
       status = fetchURL.status;
       outputData = await fetchURL.json();
     }
-  } else {
-    let fetchURL = await fetch(url, {
-      method: method,
-      headers: headers,
-      body: jsonData,
-    });
-    // getting output data
-    let outputData = await fetchURL.headers.get("content-type").split(";");
-    console.log(await fetchURL.headers.get("content-type").split(";"));
-    if (outputData[0] == "text/html") {
-      status = fetchURL.status;
-      outputData = await fetchURL.text();
-    } else {
-      status = fetchURL.status;
-      outputData = await fetchURL.json();
-    }
   }
+  let endTime = performance.now();
+  timeTaken = endTime - startTime;
+  timeTaken = Math.trunc(timeTaken);
+  let dataSize = new Blob([await fetchURL]).size;
   console.log(outputData, status);
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ response-box-logic ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  let responseBox = document.getElementById("response");
+  let statusOnDom = document.getElementById("status");
+  let timeOnDom = document.getElementById("time");
+  let sizeOfData = document.getElementById("size");
+
+  let x = status.toString();
+  if (x[0] == 2) {
+    statusOnDom.style.color = "green";
+  } else if (x[0] == 3) {
+    statusOnDom.style.color = "yellow";
+  } else {
+    statusOnDom.style.color = "red";
+  }
+
+  statusOnDom.innerHTML = null;
+  responseBox.innerHTML = null;
+  timeOnDom.innerHTML = null;
+  sizeOfData.innerHTML = null;
+
+  sizeOfData.innerHTML = `${dataSize}B`
+  timeOnDom.innerHTML = `${timeTaken}ms`;
+  statusOnDom.innerHTML = JSON.stringify(status);
+  responseBox.innerHTML = `<p>${JSON.stringify(outputData)}</p>`;
 }
 
 // {
