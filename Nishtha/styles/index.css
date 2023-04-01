@@ -110,6 +110,8 @@ overflow-y: auto; /*for vertical scroll bar*/
   border: 1px solid grey;
   width: 100px;
   margin:auto;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #Label{
@@ -508,10 +510,11 @@ overflow-y: auto; /*for vertical scroll bar*/
     word-break: normal;
 }
 #third_row{
-  width:80%;
+  width:70%;
   /* border:1px solid red; */
   margin:auto;
   align-items: center;
+  justify-content: space-between;
   /* margin-top: 20px; */
   display:flex;
 }
@@ -530,6 +533,7 @@ overflow-y: auto; /*for vertical scroll bar*/
 }
 .btn-primary{
   width:200px;
+  outline:none;
   font-size: 12px;
   background-color: #fb9820;
   border:none;
@@ -538,6 +542,10 @@ overflow-y: auto; /*for vertical scroll bar*/
   background-color:#ffad49;
   border:none;
   border-color: white !important;
+}
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
 }
 
 #collapse_h{
