@@ -7,6 +7,11 @@ let headersBtn = document.querySelector("#headersBtn");
 let reqDataDiv = document.querySelector("#reqData");
 
 // value of JSON and headers to show and store data.
+let lastURl = null;
+if (lastURl != null) {
+  let urlAndMethodForm = document.querySelector("#urlAndMethodForm");
+  urlAndMethodForm.apiSearch.value = lastURl;
+}
 let keyValueObj = {};
 let jsonData = [];
 
