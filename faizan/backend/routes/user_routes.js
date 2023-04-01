@@ -147,6 +147,57 @@ userRouter.get("/newToken", async (req, res) => {
 })
 
 
+userRouter.post("/otp", async (req, res) => {
+    const email = req.body.email
+    try {
+        const userData = await userModel.find({ email })
+        if (userData.length > 0) {
+            let num = Math.floor(Math.random() * 9000 + 1000)
+            res.send({
+                "ok": true,
+                "message": num
+            })
+        } else {
+            res.send({
+                "message": "Incorrect E-Mail"
+            })
+        }
+    } catch (error) {
+        console.log(error)
+        res.send(error)
+    }
+})
+
+
+userRouter.patch("/reset", async (req, res) => {
+    try {
+        const payload = req.body;
+
+        const email = payload.email
+        const password = payload.password
+
+        const userData = await userModel.find({ email })
+
+        if (userData.length > 0) {
+            const ID = userData[0]._id;
+            bcrypt.hash(password, 3, async function (err, hashed) {
+                const edited = { password: hashed }
+                await userModel.findByIdAndUpdate({ "_id": ID }, edited)
+                res.status(200).send({
+                    "ok": true,
+                    "message": "Password Re-Set Successfully",
+                })
+            })
+        } else {
+            res.send({ "message": "Incorrect Email" })
+        }
+
+    } catch (error) {
+        console.log(error)
+        res.send(error)
+    }
+})
+
 
 
 module.exports = { userRouter }
