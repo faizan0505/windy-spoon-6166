@@ -247,20 +247,23 @@ async function curdFunction(method, url) {
 
   // getting body data
   let body = {};
+  let outputData;
+  let status;
   if (method == "GET") {
     let fetchURL = await fetch(url, {
       method: method,
       headers: headers,
     });
     // getting output data
-    let outputData = await fetchURL.headers.get("content-type").split(";");
+    outputData = await fetchURL.headers.get("content-type").split(";");
     console.log(await fetchURL.headers.get("content-type").split(";"));
     if (outputData[0] == "text/html") {
+      status = fetchURL.status;
       outputData = await fetchURL.text();
     } else {
+      status = fetchURL.status;
       outputData = await fetchURL.json();
     }
-    console.log(outputData);
   } else {
     let fetchURL = await fetch(url, {
       method: method,
@@ -271,12 +274,14 @@ async function curdFunction(method, url) {
     let outputData = await fetchURL.headers.get("content-type").split(";");
     console.log(await fetchURL.headers.get("content-type").split(";"));
     if (outputData[0] == "text/html") {
+      status = fetchURL.status;
       outputData = await fetchURL.text();
     } else {
+      status = fetchURL.status;
       outputData = await fetchURL.json();
     }
-    console.log(outputData);
   }
+  console.log(outputData, status);
 }
 
 // {
