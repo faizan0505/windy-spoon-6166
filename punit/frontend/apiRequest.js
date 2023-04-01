@@ -126,6 +126,7 @@ jsonBtn.addEventListener("click", () => {
   <textarea id="requestBody"></textarea>
 </div>`;
   const textarea = document.querySelector("textarea");
+  textarea.innerHTML = jsonData;
   const lineNumbers = document.querySelector(".line-numbers");
 
   textarea.addEventListener("keyup", (event) => {
@@ -214,6 +215,9 @@ sendBtn.addEventListener("click", (e) => {
     if (typeof jsonData !== "object" || Array.isArray(jsonData)) {
       jsonData = [];
       alert("Invalid body type or Invalid JSON type ❌");
+    } else {
+      jsonData = `${document.getElementById("requestBody").value}`;
+      console.log(jsonData);
     }
   }
 
@@ -221,11 +225,60 @@ sendBtn.addEventListener("click", (e) => {
   if (url == "") {
     alert("please provide URL");
   } else {
-    curdFunction(method, url, jsonData, keyValueObj);
+    curdFunction(method, url);
   }
 });
 
 // crud operations
-function curdFunction(method, url, jsonData, keyValueObj) {
+async function curdFunction(method, url) {
   console.log(method, url, jsonData, keyValueObj);
+  // seting headers data
+  let headers = { "Content-Type": "application/json" };
+  if (Object.keys(keyValueObj).length != 0) {
+    for (key in keyValueObj) {
+      headers[key] = keyValueObj[key].toString();
+    }
+  }
+
+  // getting body data
+  let body = {};
+  if (method == "GET") {
+    let fetchURL = await fetch(url, {
+      method: method,
+      headers: headers,
+    });
+    // getting output data
+    let outputData = await fetchURL.headers.get("content-type").split(";");
+    console.log(await fetchURL.headers.get("content-type").split(";"));
+    if (outputData[0] == "text/html") {
+      outputData = await fetchURL.text();
+    } else {
+      outputData = await fetchURL.json();
+    }
+    console.log(outputData);
+  } else {
+    let fetchURL = await fetch(url, {
+      method: method,
+      headers: headers,
+      body: jsonData,
+    });
+    // getting output data
+    let outputData = await fetchURL.headers.get("content-type").split(";");
+    console.log(await fetchURL.headers.get("content-type").split(";"));
+    if (outputData[0] == "text/html") {
+      outputData = await fetchURL.text();
+    } else {
+      outputData = await fetchURL.json();
+    }
+    console.log(outputData);
+  }
 }
+
+// {
+//   "name": "punit",
+//   "email": "punit@mail.com",
+//   "gender": "male",
+//   "password": "12345",
+// }
+// http://localhost:9090/users/register
+// Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDI2ZjQ5ZDkzZmQzZTk2YzhkMGJhNzkiLCJpYXQiOjE2ODAyNzUxMTN9.RGIH_lUAOZuutzTs_-r88gLL7A1fOHpnv0g5EpJGnWk
