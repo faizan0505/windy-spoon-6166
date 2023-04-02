@@ -29,10 +29,6 @@ overflow-y: auto; /*for vertical scroll bar*/
     width:100%;
 }
 #img_div{
-  border-top: 1px solid  rgb(39, 39, 39);
-  border-right: 1px solid rgb(39, 39, 39);
-  border-left: 1px solid rgb(241, 155, 6);
-  border-bottom: 1px solid rgb(241, 155, 6);
   border-radius: 2px;
 }
 #Navbar{
@@ -110,6 +106,8 @@ overflow-y: auto; /*for vertical scroll bar*/
   border: 1px solid grey;
   width: 100px;
   margin:auto;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #Label{
@@ -226,27 +224,37 @@ overflow-y: auto; /*for vertical scroll bar*/
       text-align: center;
       transition: 0.3s;
       background-color: white;
-      border: 1px solid red;
+      /* border: 1px solid red; */
+    }
+    .container-fluid>div{
+      /* border: 1px solid green; */
+      margin: auto;
+    }
+    #search_div{
+      display:none;
+    }
+    #first_div>div{
+      margin: auto;
     }
     #logo_img{
-      width:100%;
+      width:70%;
        }
     #img_div{
       width: 30%;
       margin:auto;
-      border:1px solid green;
+      /* border:1px solid green; */
        }
     #first_div{
       margin-top: -20px;
       display:block;
-      border: 1px solid red;
+      /* border: 1px solid red; */
       margin:auto;
     }
     #first_div>div{
       margin-left: 35%;
     }
     #first_div>div:nth-child(3){
-      display: none;
+      margin-left: 38%;
     }
     .container-fluid>div{
       margin: 16px 0;
@@ -256,7 +264,11 @@ overflow-y: auto; /*for vertical scroll bar*/
     }
     #signin_btn,#signup_btn{
       width: 200px;
-      margin-right: 100px;
+      text-align: center;
+      margin-left: -40%;
+    }
+    #signin_btn{
+      margin-left: -85%;
     }
   }
 
@@ -296,6 +308,22 @@ overflow-y: auto; /*for vertical scroll bar*/
         display:block !important;
     }
 }
+@media (max-width: 650px){
+  #second_row_2_div{
+    flex-direction: column;
+    margin:auto;
+  }
+  .carousel{
+    margin-top: 20%;
+    border: 1px solid red;
+  }
+  #fifth_row{
+    border: 1px solid red;
+    grid-template-columns: repeat(auto-fill,minmax (190px,1fr));
+  }
+}
+
+
   #first_row{
     display:flex;
     width:90%;
@@ -508,10 +536,11 @@ overflow-y: auto; /*for vertical scroll bar*/
     word-break: normal;
 }
 #third_row{
-  width:80%;
+  width:70%;
   /* border:1px solid red; */
   margin:auto;
   align-items: center;
+  justify-content: space-between;
   /* margin-top: 20px; */
   display:flex;
 }
@@ -530,6 +559,7 @@ overflow-y: auto; /*for vertical scroll bar*/
 }
 .btn-primary{
   width:200px;
+  outline:none;
   font-size: 12px;
   background-color: #fb9820;
   border:none;
@@ -538,6 +568,10 @@ overflow-y: auto; /*for vertical scroll bar*/
   background-color:#ffad49;
   border:none;
   border-color: white !important;
+}
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
 }
 
 #collapse_h{
@@ -556,7 +590,7 @@ overflow-y: auto; /*for vertical scroll bar*/
 #fifth_row{
   margin:auto;
   display:grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(auto-fill,minmax (250px,1fr));
   grid-template-rows: repeat(3,150px);
   margin-top: 2%;
   width: 80%;
