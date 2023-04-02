@@ -37,9 +37,11 @@ overflow-y: auto; /*for vertical scroll bar*/
     z-index: 9000;
     width:100%;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .navbar{
   min-height:5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .navbar  a {
   font-size: 11.2px;
