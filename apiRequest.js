@@ -3,26 +3,36 @@
 let noneBtn = document.querySelector("#noneBtn");
 let jsonBtn = document.querySelector("#jsonBtn");
 let headersBtn = document.querySelector("#headersBtn");
-let sp1 = document.getElementById("span1")
-let sp2 = document.getElementById("span2")
-let sp3 = document.getElementById("span3")
+let sp1 = document.getElementById("span1");
+let sp2 = document.getElementById("span2");
+let sp3 = document.getElementById("span3");
 
 let reqDataDiv = document.querySelector("#reqData");
 
 // value of JSON and headers to show and store data.
-let lastURl = null;
+
+let lastURl = localStorage.getItem("url") || null;
 if (lastURl != null) {
   let urlAndMethodForm = document.querySelector("#urlAndMethodForm");
   urlAndMethodForm.apiSearch.value = lastURl;
 }
-let keyValueObj = {};
-let jsonData = [];
+
+let keyValueObj = localStorage.getItem("keyValueObj") || {};
+if (Object.keys(keyValueObj).length != 0) {
+  keyValueObj = JSON.parse(keyValueObj);
+}
+let jsonData = localStorage.getItem("jsonData") || [];
+if (jsonData.length != 0) {
+  console.log(jsonData);
+  jsonData = JSON.parse(jsonData);
+}
 
 // ****************************************************None section****************************************************************
 function initialNoneBtnColor() {
   // noneBtn.style.backgroundColor = "orange";
   noneBtn.style.color = "#fb9820";
   sp1.style.border = "1px #fb9820 solid";
+  reqDataDiv.style.backgroundColor = "#fff";
   // noneBtn.style.padding = "5px";
 }
 
@@ -30,6 +40,7 @@ initialNoneBtnColor();
 noneBtn.addEventListener("click", () => {
   // style
   reqDataDiv.innerHTML = null;
+  reqDataDiv.style.backgroundColor = "#fff";
   // noneBtn.style.backgroundColor = "orange";
   noneBtn.style.color = "#fb9820";
   sp1.style.border = "1px #fb9820 solid";
@@ -53,7 +64,8 @@ headersBtn.addEventListener("click", () => {
   // headersBtn.style.backgroundColor = "orange";
   headersBtn.style.color = "#fb9820";
   sp2.style.border = "1px #fb9820 solid";
-  sp2.style.width = "70px"
+  sp2.style.width = "70px";
+  reqDataDiv.style.backgroundColor = "#fff";
 
   jsonBtn.style.backgroundColor = "white";
   noneBtn.style.backgroundColor = "white";
@@ -129,6 +141,7 @@ jsonBtn.addEventListener("click", () => {
   // jsonBtn.style.backgroundColor = "orange";
   jsonBtn.style.color = "#fb9820";
   sp3.style.border = "1px #fb9820 solid";
+  reqDataDiv.style.backgroundColor = "#282a3a";
 
   headersBtn.style.backgroundColor = "white";
 
@@ -258,7 +271,9 @@ sendBtn.addEventListener("click", (e) => {
 
 async function crudFunction(method, url) {
   console.log(method, url, jsonData, keyValueObj);
-
+  localStorage.setItem("jsonData", JSON.stringify(jsonData));
+  localStorage.setItem("url", url);
+  localStorage.setItem("keyValueObj", JSON.stringify(keyValueObj));
   // seting headers data
 
   let headers = { "Content-Type": "application/json" };
@@ -277,37 +292,52 @@ async function crudFunction(method, url) {
   let fetchURL;
   let startTime = performance.now();
   if (method == "GET") {
-    fetchURL = await fetch(url, {
-      method: method,
-      headers: headers,
-    });
+    try {
+      fetchURL = await fetch(url, {
+        method: method,
+        headers: headers,
+      });
+    } catch (error) {
+      outputData = "cannot get the request. Server Error";
+      status = 500;
+    }
 
     // getting output data
 
-    outputData = await fetchURL.headers.get("content-type").split(";");
-    console.log(await fetchURL.headers.get("content-type").split(";"));
-    if (outputData[0] == "text/html") {
-      status = fetchURL.status;
-      outputData = await fetchURL.text();
-    } else {
-      status = fetchURL.status;
-      outputData = await fetchURL.json();
+    if (fetchURL != undefined) {
+      outputData = await fetchURL.headers.get("content-type").split(";");
+      console.log(await fetchURL.headers.get("content-type").split(";"));
+      if (outputData[0] == "text/html") {
+        status = fetchURL.status;
+        outputData = await fetchURL.text();
+      } else {
+        status = fetchURL.status;
+        outputData = await fetchURL.json();
+      }
     }
   } else {
-    fetchURL = await fetch(url, {
-      method: method,
-      headers: headers,
-      body: jsonData,
-    });
+    try {
+      fetchURL = await fetch(url, {
+        method: method,
+        headers: headers,
+        body: jsonData,
+      });
+    } catch (error) {
+      outputData = `cannot ${method} the request. Server Error`;
+      status = 500;
+    }
     // getting output data
-    outputData = await fetchURL.headers.get("content-type").split(";");
-    console.log(await fetchURL.headers.get("content-type").split(";"));
-    if (outputData[0] == "text/html") {
-      status = fetchURL.status;
-      outputData = await fetchURL.text();
-    } else {
-      status = fetchURL.status;
-      outputData = await fetchURL.json();
+
+    if (fetchURL != undefined) {
+      outputData = await fetchURL.headers.get("content-type").split(";");
+      console.log(await fetchURL.headers.get("content-type").split(";"));
+      if (outputData[0] == "text/html") {
+        status = fetchURL.status;
+        outputData = await fetchURL.text();
+      } else {
+        status = fetchURL.status;
+        outputData = await fetchURL.json();
+      }
     }
   }
   let endTime = performance.now();
@@ -337,17 +367,9 @@ async function crudFunction(method, url) {
   timeOnDom.innerHTML = null;
   sizeOfData.innerHTML = null;
 
-  sizeOfData.innerHTML = `${dataSize}B`
+  sizeOfData.innerHTML = `${dataSize}B`;
   timeOnDom.innerHTML = `${timeTaken}ms`;
   statusOnDom.innerHTML = JSON.stringify(status);
   responseBox.innerHTML = `<p>${JSON.stringify(outputData)}</p>`;
+  fetchURL = undefined;
 }
-
-// {
-//   "name": "punit",
-//   "email": "punit@mail.com",
-//   "gender": "male",
-//   "password": "12345",
-// }
-// http://localhost:9090/users/register
-// Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDI2ZjQ5ZDkzZmQzZTk2YzhkMGJhNzkiLCJpYXQiOjE2ODAyNzUxMTN9.RGIH_lUAOZuutzTs_-r88gLL7A1fOHpnv0g5EpJGnWk

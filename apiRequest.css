@@ -20,25 +20,25 @@
 /* #apiMethod {
   border: 1px solid;
 } */
-#apiMethod>form {
+#apiMethod > form {
   margin-top: 2%;
   /* border: 1px solid orange; */
   width: 100%;
 }
 
-#apiMethod>form>select {
+#apiMethod > form > select {
   width: 100px;
   font-size: 16px;
   outline: none;
 }
 
-#apiMethod>form>input:nth-child(2) {
+#apiMethod > form > input:nth-child(2) {
   width: 82%;
   font-size: 16px;
   outline: none;
 }
 
-#apiMethod>form>input {
+#apiMethod > form > input {
   width: 100px;
   font-size: 16px;
   outline: none;
@@ -51,7 +51,7 @@
   gap: 30px;
 }
 
-#requestTabs>button {
+#requestTabs > button {
   border: none;
   background-color: white;
   font-size: 16px;
@@ -66,6 +66,7 @@
 #reqData {
   padding: 10px 5px;
   height: 300px;
+  margin-top: 10px;
   overflow: auto;
 }
 
@@ -96,7 +97,7 @@ td:nth-child(4) {
   text-align: center;
 }
 
-td:nth-child(4)>i {
+td:nth-child(4) > i {
   font-size: 20px;
 }
 
@@ -134,7 +135,6 @@ td:nth-child(4)>i {
   background-color: #282a3a;
   border-radius: 2px;
   /* border: 1px solid red; */
-
 }
 
 textarea {
@@ -142,8 +142,8 @@ textarea {
   background-color: transparent;
   padding: 0;
   border: 0;
-  color: #FFF;
-  /* outline: none; */
+  color: #fff;
+  outline: none;
   resize: none;
   width: 100%;
 }
@@ -171,7 +171,7 @@ textarea {
 }
 
 #responseOutsideDiv {
-  border: 2px solid black;
+  border: 0px solid black;
   font-size: large;
   height: 45vh;
 }
@@ -181,37 +181,30 @@ textarea {
   justify-content: space-around;
 }
 
-#statusBox>div {
+#statusBox > div {
   display: flex;
 }
-
 
 #methods {
   width: 100px;
   height: 40px;
   border-radius: 5px;
-
 }
 
 #apiSearch {
   height: 40px;
   border-radius: 5px;
-  padding: 10px
+  padding: 10px;
 }
 
 #sendBtn {
   height: 40px;
   border-radius: 5px;
   border: 0px;
-  background-color:#fb9820;
+  background-color: #fb9820;
   /* font-size: larger; */
-  color: #FFF;
+  color: #fff;
   cursor: pointer;
-}
-
-
-#get {
-  color: blue;
 }
 
 select:nth-child(4) {
