@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Network</title>
+  <link rel="stylesheet" href="api_network.css" />
+  <link rel="stylesheet" href="api_req.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="footer_nav.css"> -->
+  <link rel="stylesheet" href="index.css">
+
+
+
+</head>
+
+<body>
+  <header>
+    <nav id="Navbar" class="navbar py-0 navbar-expand-lg navbar-white bg-white">
+      <div class="container-fluid">
+        <div id="img_div">
+          <a class="navbar-brand" href="#"><img id="logo_img" src="./images/API ACE LOGO.png" /></a>
+        </div>
+        <div id="first_div">
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul id="menu" class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Product
+                </button>
+                <ul class="dropdown-menu dropdown-menu-white">
+                  <li><a class="dropdown-item" href="#">What is API ACE?</a></li>
+                  <li><a class="dropdown-item" href="#">API repository</a></li>
+                  <li><a class="dropdown-item" href="#">Tools</a></li>
+                  <li><a class="dropdown-item" href="#">Governance</a></li>
+                  <li><a class="dropdown-item" href="#">Workspaces</a></li>
+                  <li><a class="dropdown-item" href="#">Integrations</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Enterprise
+                </button>
+                <ul class="dropdown-menu dropdown-menu-white">
+                  <li><a class="dropdown-item" href="#">API ACE Enterprise</a></li>
+                  <li><a class="dropdown-item" href="#">Customers</a></li>
+                  <li><a class="dropdown-item" href="#">Contact sales</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <button id="explory" style="margin:auto" onlick="explore() " data-bs-toggle="dropdown"
+              aria-expanded="false">Explore</button>
+          </div>
+        </div>
+
+        <a href="api_network.html"><button style="font-size: 15px; cursor: pointer;">Workspace</button>
+          <a href=""></a>
+          <div><button onclick="logout()"
+              style="padding: 5px; color: black;font-size: medium;border-radius: 5px; cursor: pointer; background-color: orangered;"
+              id="signup_btn">Log Out</button></div>
+
+          <h4 id="usernameof"></h4>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <br> <br> <br> <br> <br>
+  <div id="cont">
+    <div>
+      <button id="req"><a href="apiRequest.html">New Request</a></button>
+      <div id="sidebar"></div>
+    </div>
+    <section class="apinetwork">
+
+      <div id="my">
+        <a href="apiRequest.html">
+          <div id="newApi">
+            <img src="fzn-img/newApi.JPG" alt="">
+          </div>
+        </a>
+        <a href="apiRequest.html">
+          <div id="newReq">
+            <img src="fzn-img/newReq.JPG" alt="">
+          </div>
+        </a>
+      </div>
+      <br> <br>
+      <img src="https://postman.com/_aether-assets/illustrations/light/illustration-no-activity.svg" alt="" />
+      <h2>Create a project to present your work on the Public API Network</h2>
+      <p>
+        A team can have its own public identity and share its APIs with
+        consumers on the network
+      </p>
+    </section>
+  </div>
+</body>
+
+</html>
+
+<script src="fznNavbar.js"></script>
+<script src="api_req(fe).js"></script>
+<!-- <script src="logout.js"></script> -->
+
+<script>
+
+  const logout = async () => {
+    // alert("Hii")
+    await fetch("http://localhost:4500/logout").then(result => result.json())
+      .then(data => {
+        // alert(data.message)
+        window.location.href = "index.html"
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+
+
+  let user_name = JSON.parse(localStorage.getItem("username"));
+
+  document.getElementById("usernameof").innerHTML = user_name || "Welcome";
+</script>

@@ -26,8 +26,16 @@ passport.use(new GoogleStrategy({
         if (userData.length > 0) {
 
             let sub = `Welcome to API ACE`
-            let body = `This is Greeting from API ACE, Hope your experience with
-                API ACE will be great and user-friendly. \n Thankyou`
+            let body = `Dear ${userData[0].username},
+
+            Thanks for Login again API ACE, Welcomes you to our app! We are thrilled to have you join our community and we hope that you will find our app to be a valuable tool for your needs.
+            
+            Our app has been designed to be user-friendly and intuitive, with a range of features and functions.
+           
+            Thank you again for choosing API ACE and we hope you enjoy using our app!
+            
+            Best regards,
+            API ACE`
             sendMail(sub, body, email)
             
             const token = jwt.sign({ "id": userData[0]._id }, "normal", { expiresIn: '24h' })
@@ -43,8 +51,16 @@ passport.use(new GoogleStrategy({
             await user.save()
 
             let sub = `Welcome to API ACE`
-            let body = `This is Greeting from API ACE, Hope your experience with
-                API ACE will be great and user-friendly. \n Thankyou`
+            let body = `Dear ${username},
+
+            This is Greeting from API ACE, Welcomes you to our app! We are thrilled to have you join our community and we hope that you will find our app to be a valuable tool for your needs.
+            \n \n
+            Our app has been designed to be user-friendly and intuitive, with a range of features and functions.
+            \n \n
+            Thank you again for choosing API ACE and we hope you enjoy using our app!
+            \n \n
+            Best regards,
+            API ACE`
             sendMail(sub, body, email)
 
             const userData = await userModel.find({ email })

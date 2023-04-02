@@ -79,16 +79,16 @@ let logindata = async () => {
   if (data.ok) {
     alert("Log-In Sucessfully")
     console.log(data.username)
+    localStorage.setItem("username", JSON.stringify(data.username));
     window.location.href = "index.html"
   } else {
     alert(data.message)
   }
 
-  localStorage.setItem("username", JSON.stringify(data.username));
 }
 
 
 
-// let user_name = JSON.parse(sessionStorage.getItem("name"))
+// let user_name = JSON.parse(sessionStorage.getItem("username"))
 
 // document.querySelector("#username").innerText = user_name || "Welcome";
