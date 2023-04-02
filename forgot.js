@@ -14,7 +14,7 @@ document.querySelector("#submit").addEventListener("click", () => {
                     "email": mail,
                 };
 
-                await fetch("http://localhost:4500/otp", {
+                await fetch("https://api-ace.onrender.com/otp", {
                     method: 'POST',
                     headers: {
                         "Content-type": "application/json"

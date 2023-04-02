@@ -28,7 +28,7 @@ function show(data) {
 
 const getApi = async () => {
 
-    await fetch("http://localhost:4500/api").then(result => result.json())
+    await fetch("https://api-ace.onrender.com/api").then(result => result.json())
         .then(data => {
             // alert(data.message)
             if(data.ok){
@@ -61,7 +61,7 @@ const getApi = async () => {
 //                 url
 //             };
 
-//             await fetch("http://localhost:4500/addapi", {
+//             await fetch("https://api-ace.onrender.com/addapi", {
 //                 method: 'POST',
 //                 headers: {
 //                     "Content-type": "application/json"
@@ -94,7 +94,7 @@ async function apiDel(element) {
 
     let id = element._id;
 
-    await fetch(`http://localhost:4500/delete/${id}`, {
+    await fetch(`https://api-ace.onrender.com/delete/${id}`, {
         method: "DELETE",
     }).then(result => {
         result.json()

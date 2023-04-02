@@ -2,7 +2,7 @@ document.querySelector(".gbtn").addEventListener("click", auth);
 document.querySelector(".gitbtn").addEventListener("click", gitauth);
 
 async function auth() {
-  window.location = "http://localhost:4500/auth/google";
+  window.location = "https://api-ace.onrender.com/auth/google";
 }
 
 async function gitauth() {
@@ -27,7 +27,7 @@ let register = async () => {
       password,
     };
 
-    await fetch("http://localhost:4500/signup", {
+    await fetch("https://api-ace.onrender.com/signup", {
       method: 'POST',
       headers: {
         "Content-type": "application/json"
@@ -67,7 +67,7 @@ let logindata = async () => {
     password
   }
 
-  const fetchedData = await fetch("http://localhost:4500/login", {
+  const fetchedData = await fetch("https://api-ace.onrender.com/login", {
     method: "POST",
     headers: {
       "Content-type": "application/json"
