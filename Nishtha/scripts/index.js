@@ -8,6 +8,7 @@ function myTheme(){
     const body= document.getElementById("main")
     const h= document.getElementsByTagName("h5")
     const h1= document.getElementsByTagName("h1");
+    const navbar= document.getElementById("Navbar")
     const h5= document.getElementsByTagName("h4");
     const p= document.getElementsByTagName("p")
     const l= document.getElementsByTagName("li")
@@ -20,6 +21,8 @@ function myTheme(){
         second_row.style.background = "#4D4D4D";
         sixth_row.style.background = "#4D4D4D";
         f_row.style.background = "#4D4D4D";
+        // navbar.classList.add("bg-dark");
+        // navbar.classList.add("navbar-dark");
         for(let i=0;i<h.length;i++){
             h[i].style.color="#FFFFFF";
         }
@@ -42,6 +45,7 @@ function myTheme(){
         body.style.background = "#FFFFFF";
         second_row.style.background = "#F9F9F9";
         sixth_row.style.background = "#F9F9F9";
+        navbar[0].style.background = "#F9F9F9";
         f_row.style.background = "#F9F9F9";
         for(let i=0;i<h.length;i++){
             h[i].style.color="#4D4D4D";
