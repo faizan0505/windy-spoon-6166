@@ -66,6 +66,7 @@
 #reqData {
   padding: 10px 5px;
   height: 300px;
+  margin-top: 10px;
   overflow: auto;
 }
 
@@ -143,7 +144,7 @@ textarea {
   padding: 0;
   border: 0;
   color: #FFF;
-  /* outline: none; */
+  outline:none;
   resize: none;
   width: 100%;
 }
@@ -171,7 +172,7 @@ textarea {
 }
 
 #responseOutsideDiv {
-  border: 2px solid black;
+  border: 0px solid black;
   font-size: large;
   height: 45vh;
 }

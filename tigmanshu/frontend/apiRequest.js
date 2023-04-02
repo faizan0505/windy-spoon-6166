@@ -23,6 +23,7 @@ function initialNoneBtnColor() {
   // noneBtn.style.backgroundColor = "orange";
   noneBtn.style.color = "#fb9820";
   sp1.style.border = "1px #fb9820 solid";
+  reqDataDiv.style.backgroundColor = "#fff";
   // noneBtn.style.padding = "5px";
 }
 
@@ -30,6 +31,7 @@ initialNoneBtnColor();
 noneBtn.addEventListener("click", () => {
   // style
   reqDataDiv.innerHTML = null;
+  reqDataDiv.style.backgroundColor = "#fff";
   // noneBtn.style.backgroundColor = "orange";
   noneBtn.style.color = "#fb9820";
   sp1.style.border = "1px #fb9820 solid";
@@ -54,6 +56,7 @@ headersBtn.addEventListener("click", () => {
   headersBtn.style.color = "#fb9820";
   sp2.style.border = "1px #fb9820 solid";
   sp2.style.width = "70px"
+  reqDataDiv.style.backgroundColor = "#fff";
 
   jsonBtn.style.backgroundColor = "white";
   noneBtn.style.backgroundColor = "white";
@@ -129,6 +132,7 @@ jsonBtn.addEventListener("click", () => {
   // jsonBtn.style.backgroundColor = "orange";
   jsonBtn.style.color = "#fb9820";
   sp3.style.border = "1px #fb9820 solid";
+  reqDataDiv.style.backgroundColor = "#282a3a"
 
   headersBtn.style.backgroundColor = "white";
 
