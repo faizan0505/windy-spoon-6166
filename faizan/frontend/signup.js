@@ -83,9 +83,8 @@ let logindata = async () => {
   } else {
     alert(data.message)
   }
-  sessionStorage.setItem("token", data.token);
-  localStorage.setItem("user", JSON.stringify(data.user));
-  sessionStorage.setItem("name", JSON.stringify(data.name));
+
+  localStorage.setItem("username", JSON.stringify(data.username));
 }
 
 

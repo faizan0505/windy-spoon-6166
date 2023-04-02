@@ -1,7 +1,8 @@
 const mongoose = require("mongoose")
 
 const apiSchema = mongoose.Schema({
-    api_link: String,
+    method: String,
+    url: String,
     userID: String
 }, {
     versionKey: false

@@ -5,6 +5,7 @@ const { authentication } = require("./middlewares/authentication")
 const { userRouter } = require("./routes/user_routes")
 const { apiRouter } = require("./routes/api_route")
 const { passport } = require("./config/googleAuth")
+const { sendMail } = require("./middlewares/mail")
 
 const jwt = require("jsonwebtoken")
 const { v4: uuidv4 } = require('uuid');
@@ -92,6 +93,12 @@ app.get("/auth/github", async (req, res) => {
 
     const userData = await userModel.find({ email })
     if (userData.length > 0) {
+
+        let sub = `Welcome to API ACE`
+        let body = `This is Greeting from API ACE, Hope your experience with
+                API ACE will be great and user-friendly. \n Thankyou`
+        sendMail(sub, body, email)
+
         const token = jwt.sign({ "id": userData[0]._id }, "normal", { expiresIn: '24h' })
         await client.set('token', token, { EX: 86400 })
         res.sendFile(filePath)
@@ -103,6 +110,11 @@ app.get("/auth/github", async (req, res) => {
             // photo
         })
         await user.save()
+
+        let sub = `Welcome to API ACE`
+        let body = `This is Greeting from API ACE, Hope your experience with
+                API ACE will be great and user-friendly. \n Thankyou`
+        sendMail(sub, body, email)
 
         const userData = await userModel.find({ email })
 

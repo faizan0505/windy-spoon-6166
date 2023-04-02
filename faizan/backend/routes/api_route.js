@@ -20,12 +20,29 @@ apiRouter.post("/addapi", async (req, res) => {
     try {
         const apiData = await new apiModel(payload)
         await apiData.save()
-        res.send("api saved")
+        res.send({
+            "ok": true,
+            "message": "api saved"
+        })
     } catch (error) {
         console.log(error)
         res.send(error)
     }
 })
 
+
+apiRouter.delete("/delete/:id", async (req, res) => {
+    const ID = req.params.id;
+    try {
+        await apiModel.findByIdAndDelete({ "_id": ID })
+        res.send({
+            "ok": true,
+            "message": "Deleted"
+        })
+    } catch (error) {
+        console.log(error)
+        res.send(error)
+    }
+})
 
 module.exports = { apiRouter }
