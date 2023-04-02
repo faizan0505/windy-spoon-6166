@@ -228,27 +228,37 @@ overflow-y: auto; /*for vertical scroll bar*/
       text-align: center;
       transition: 0.3s;
       background-color: white;
-      border: 1px solid red;
+      /* border: 1px solid red; */
+    }
+    .container-fluid>div{
+      /* border: 1px solid green; */
+      margin: auto;
+    }
+    #search_div{
+      display:none;
+    }
+    #first_div>div{
+      margin: auto;
     }
     #logo_img{
-      width:100%;
+      width:70%;
        }
     #img_div{
       width: 30%;
       margin:auto;
-      border:1px solid green;
+      /* border:1px solid green; */
        }
     #first_div{
       margin-top: -20px;
       display:block;
-      border: 1px solid red;
+      /* border: 1px solid red; */
       margin:auto;
     }
     #first_div>div{
       margin-left: 35%;
     }
     #first_div>div:nth-child(3){
-      display: none;
+      margin-left: 38%;
     }
     .container-fluid>div{
       margin: 16px 0;
@@ -258,7 +268,11 @@ overflow-y: auto; /*for vertical scroll bar*/
     }
     #signin_btn,#signup_btn{
       width: 200px;
-      margin-right: 100px;
+      text-align: center;
+      margin-left: -40%;
+    }
+    #signin_btn{
+      margin-left: -85%;
     }
   }
 
