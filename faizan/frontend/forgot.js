@@ -25,7 +25,7 @@ document.querySelector("#submit").addEventListener("click", () => {
                         const data = await result.json();
                         if (data.ok) {
                             otpval = data.message
-                            alert(`OTP is - ${data.message}`);
+                            // alert(`OTP is - ${data.message}`);
                             document.querySelector("#otp").style.display = "block"
                         } else {
                             alert(data.message)

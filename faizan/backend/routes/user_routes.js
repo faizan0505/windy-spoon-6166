@@ -3,6 +3,7 @@ const { userModel } = require("../models/user_model")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
+const { sendMail } = require("../middlewares/mail")
 
 const { createClient } = require("redis")
 const client = createClient({
@@ -27,6 +28,10 @@ userRouter.post("/signup", async (req, res) => {
             bcrypt.hash(password, 3, async function (err, hashed) {
                 const data = new userModel({ username, email, password: hashed })
                 await data.save()
+                let sub = `Welcome to API ACE`
+                let body = `This is Greeting from API ACE, Hope your experience with
+                API ACE will be great and user-friendly.`
+                sendMail(sub, body, email)
                 res.status(200).send({
                     "ok": true,
                     "message": "Sign-Up Successfully",
@@ -57,6 +62,11 @@ userRouter.post("/login", async (req, res) => {
 
                     await client.set('token', token, { EX: 86400 })
                     await client.set('re_token', re_token, { EX: 604800 })
+
+                    let sub = `Welcome to API ACE`
+                    let body = `This is Greeting from API ACE, Hope your experience with
+                          API ACE will be great and user-friendly. \n Thankyou`
+                    sendMail(sub, body, email)
 
                     res.status(200).send({
                         "ok": true,
@@ -153,6 +163,9 @@ userRouter.post("/otp", async (req, res) => {
         const userData = await userModel.find({ email })
         if (userData.length > 0) {
             let num = Math.floor(Math.random() * 9000 + 1000)
+            let sub = `OTP for resetting the API ACE Password`
+            let body = `This is Your OTP - ${num} for resetting the API ACE password, Keep it confedential.`
+            sendMail(sub, body, email)
             res.send({
                 "ok": true,
                 "message": num

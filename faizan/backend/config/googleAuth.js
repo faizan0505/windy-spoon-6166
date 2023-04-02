@@ -3,6 +3,7 @@ const passport = require("passport")
 const { v4: uuidv4 } = require('uuid');
 const { userModel } = require("../models/user_model.js")
 const jwt = require("jsonwebtoken")
+const { sendMail } = require("../middlewares/mail.js")
 
 const { createClient } = require("redis")
 const client = createClient({
@@ -24,9 +25,14 @@ passport.use(new GoogleStrategy({
         const userData = await userModel.find({ email })
         if (userData.length > 0) {
 
+            let sub = `Welcome to API ACE`
+            let body = `This is Greeting from API ACE, Hope your experience with
+                API ACE will be great and user-friendly. \n Thankyou`
+            sendMail(sub, body, email)
+            
             const token = jwt.sign({ "id": userData[0]._id }, "normal", { expiresIn: '24h' })
             await client.set('token', token, { EX: 86400 })
-            return cb(null,userData)
+            return cb(null, userData)
         } else {
             const user = await new userModel({
                 username,
@@ -36,8 +42,13 @@ passport.use(new GoogleStrategy({
             })
             await user.save()
 
+            let sub = `Welcome to API ACE`
+            let body = `This is Greeting from API ACE, Hope your experience with
+                API ACE will be great and user-friendly. \n Thankyou`
+            sendMail(sub, body, email)
+
             const userData = await userModel.find({ email })
-            
+
             const token = jwt.sign({ "id": userData[0]._id }, "normal", { expiresIn: '24h' })
             await client.set('token', token, { EX: 86400 })
 

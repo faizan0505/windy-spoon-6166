@@ -325,6 +325,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 a{
