@@ -1,7 +1,7 @@
 
 function redirect(){
     console.log("hi")
-    window.location.href="index.html"   /// file name to be redirected
+    window.location.href="apiRequest.html"   /// file name to be redirected
 }
 function logout(){
     console.log("hi")

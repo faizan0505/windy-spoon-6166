@@ -1,8 +1,14 @@
 
+
+function explore(){
+    window.location.href="explore.html" 
+}
 function myTheme(){
     const toggle= document.getElementById("darkmode-Toggle")
     const body= document.getElementById("main")
     const h= document.getElementsByTagName("h5")
+    const h1= document.getElementsByTagName("h1");
+    const h5= document.getElementsByTagName("h4");
     const p= document.getElementsByTagName("p")
     const l= document.getElementsByTagName("li")
     const u= document.getElementsByTagName("ul")
@@ -16,6 +22,12 @@ function myTheme(){
         f_row.style.background = "#4D4D4D";
         for(let i=0;i<h.length;i++){
             h[i].style.color="#FFFFFF";
+        }
+        for(let i=0;i<h1.length;i++){
+            h1[i].style.color="#FFFFFF";
+        }
+        for(let i=0;i<h5.length;i++){
+            h5[i].style.color="#FFFFFF";
         }
         for(let i=0;i<p.length;i++){
             p[i].style.color="#FFFFFF";
@@ -33,6 +45,12 @@ function myTheme(){
         f_row.style.background = "#F9F9F9";
         for(let i=0;i<h.length;i++){
             h[i].style.color="#4D4D4D";
+        }
+        for(let i=0;i<h1.length;i++){
+            h1[i].style.color="#4D4D4D";
+        }
+        for(let i=0;i<h5.length;i++){
+            h5[i].style.color="#4D4D4D";
         }
         for(let i=0;i<p.length;i++){
             p[i].style.color="#4D4D4D";

@@ -29,10 +29,6 @@ overflow-y: auto; /*for vertical scroll bar*/
     width:100%;
 }
 #img_div{
-  border-top: 1px solid  rgb(39, 39, 39);
-  border-right: 1px solid rgb(39, 39, 39);
-  border-left: 1px solid rgb(241, 155, 6);
-  border-bottom: 1px solid rgb(241, 155, 6);
   border-radius: 2px;
 }
 #Navbar{
@@ -312,6 +308,22 @@ overflow-y: auto; /*for vertical scroll bar*/
         display:block !important;
     }
 }
+@media (max-width: 650px){
+  #second_row_2_div{
+    flex-direction: column;
+    margin:auto;
+  }
+  .carousel{
+    margin-top: 20%;
+    border: 1px solid red;
+  }
+  #fifth_row{
+    border: 1px solid red;
+    grid-template-columns: repeat(auto-fill,minmax (190px,1fr));
+  }
+}
+
+
   #first_row{
     display:flex;
     width:90%;
@@ -578,7 +590,7 @@ overflow-y: auto; /*for vertical scroll bar*/
 #fifth_row{
   margin:auto;
   display:grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(auto-fill,minmax (250px,1fr));
   grid-template-rows: repeat(3,150px);
   margin-top: 2%;
   width: 80%;
