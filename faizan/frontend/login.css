@@ -18,7 +18,7 @@
 }
 
 p,li{
-  font-size: large;
+  font-size: medium;
 }
 
 #left{
@@ -45,7 +45,7 @@ button {
   cursor: pointer;
 }
 
-input {
+#right input {
   background-color: rgb(250, 250, 250);
   padding: 8px 5px 8px 10px;
   width: 95%;
