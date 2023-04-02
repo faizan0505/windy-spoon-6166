@@ -7,19 +7,20 @@
   width: 80%;
   margin: auto;
 }
-#main {
+/* #main {
   border: 1px solid red;
-}
+} */
 
-#request {
+/* #request {
   border: 1px solid green;
-}
+} */
 /* api method */
-#apiMethod {
+/* #apiMethod {
   border: 1px solid;
-}
+} */
 #apiMethod > form {
-  border: 1px solid orange;
+  margin-top: 2%;
+  /* border: 1px solid orange; */
   width: 100%;
 }
 
@@ -118,6 +119,7 @@ td:nth-child(4) > i {
   line-height: 21px;
   background-color: #282a3a;
   border-radius: 2px;
+  /* border: 1px solid red; */
  
 }
 
@@ -127,7 +129,7 @@ textarea {
   padding: 0;
   border: 0;
   color: #FFF;
-  outline: none;
+  /* outline: none; */
   resize: none;
   width: 100%;
 }
@@ -146,4 +148,25 @@ textarea {
   display: block;
   color: orange;
   font-size: medium;
+}
+
+#response{
+  word-wrap:break-word;
+  overflow-y: auto;
+  padding: 2%;
+}
+
+#responseOutsideDiv{
+  border: 2px solid black;
+  font-size: large;
+  height: 45vh;
+}
+
+#statusBox{
+  display: flex;
+ justify-content: space-around;
+}
+
+#statusBox>div{
+  display: flex;
 }

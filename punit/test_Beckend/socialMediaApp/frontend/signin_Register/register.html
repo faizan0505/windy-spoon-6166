@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      #container {
+        text-align: center;
+      }
+      #nav {
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="nav">
+        <a href="">homepage</a>
+        <a href="">signin/register</a>
+      </div>
+      <h1 style="margin-top: 50px">Register</h1>
+      <form action="" autocomplete="on">
+        <p>
+          <label for="">name</label
+          ><input type="text" id="name" placeholder="name" />
+        </p>
+        <p>
+          <label for="">email</label
+          ><input type="email" id="email" placeholder="xyz@xyz.com" />
+        </p>
+        <p>
+          <label for="">gender</label
+          ><input type="text" id="gender" placeholder="male/female" />
+        </p>
+        <p>
+          <label for="">password</label
+          ><input type="password" id="password" placeholder="xyz123@" />
+        </p>
+        <input type="submit">
+        <p>If already a user <a href="./signin.html">signin</a></p>
+      </form>
+    </div>
+  </body>
+</html>
+<script src="./register.js"></script>
