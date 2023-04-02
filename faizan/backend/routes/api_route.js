@@ -8,7 +8,10 @@ apiRouter.get("/api", async (req, res) => {
     let query = req.query;
     try {
         const apis = await apiModel.find(query)
-        res.send(apis)
+        res.send({
+            "ok":true,
+            apis
+        })
     } catch (error) {
         console.log(error)
         res.send(error)

@@ -13,7 +13,7 @@ client.on('error',err => console.log('Redis Client Error',err));
 client.connect();
 
 const authentication =async (req, response, next) => {
-    const token =await client.get('JWTtoken')
+    const token =await client.get('token')
     // const token = req.headers.authorization;
 
     try{
@@ -25,7 +25,7 @@ const authentication =async (req, response, next) => {
                     "message": "Please Log-In first - Blacklisted token"
                 })
             }else{
-                const decoded =jwt.verify(token, "jwt_token");
+                const decoded =jwt.verify(token, "normal");
                 if(decoded){
                     req.body.userID= decoded.id;
                     next()

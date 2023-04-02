@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API-ACE - Sign In</title>
+
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+
+</head>
+
+<body>
+
+  <div class="cont">
+    <img class="logo" src="fzn-img/API ACE LOGO.png" alt="" />
+
+    <div class="part">
+      <div id="left">
+        <div class="googleoauth">
+          <button class="gbtn">Continue with Google</button>
+        </div>
+        <h3 class="c">or</h3>
+        <div class="gitoauth">
+          <button class="gitbtn">Continue with GitHub</button>
+        </div>
+        <br> <br>
+        <div>
+          <h3>Why sign up/Log in?</h3>
+          <br>
+          <ul>
+            <li>Organize all your API development within Api Ace Workspaces</li> <br>
+            <li>Sync your Api data across devices</li> <br>
+            <li>Backup your data to the Ace clould</li> <br>
+            <li>It's free!</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div id="right">
+        <div>
+          <h2>Log In</h2>
+          <div>
+            <h3><a href="signup.html">Create Account</a></h3><span style="white-space: pre;"> instead?</span>
+          </div>
+        </div>
+        <br>
+        <p>Email</p>
+        <input id="logmail" type="text" placeholder="Enter Email" required />
+        <br> <br>
+        <p>Password</p>
+        <input id="logpass" type="password" placeholder="Enter Password" required />
+        <br><br>
+        <div id="for">
+          <p>Stay signed in for 30 days</p>
+          <h3><a href="forgot.html">forgot password?</a></h3>
+        </div>
+        <br>
+        <button class="btn" onclick="logindata()">Sign in</button>
+      </div>
+    </div>
+</body>
+
+</html>
+
+<script src="signup.js"></script>
+<script src="fznNavbar.js"></script>
+<script src="logout.js"></script>

@@ -29,8 +29,16 @@ userRouter.post("/signup", async (req, res) => {
                 const data = new userModel({ username, email, password: hashed })
                 await data.save()
                 let sub = `Welcome to API ACE`
-                let body = `This is Greeting from API ACE, Hope your experience with
-                API ACE will be great and user-friendly.`
+                let body = `Dear ${username},
+
+                This is Greeting from API ACE, Welcomes you to our app! We are thrilled to have you join our community and we hope that you will find our app to be a valuable tool for your needs.
+                
+                Our app has been designed to be user-friendly and intuitive, with a range of features and functions.
+                
+                Thank you again for choosing API ACE and we hope you enjoy using our app!
+                
+                Best regards,
+                API ACE`
                 sendMail(sub, body, email)
                 res.status(200).send({
                     "ok": true,
@@ -64,14 +72,22 @@ userRouter.post("/login", async (req, res) => {
                     await client.set('re_token', re_token, { EX: 604800 })
 
                     let sub = `Welcome to API ACE`
-                    let body = `This is Greeting from API ACE, Hope your experience with
-                          API ACE will be great and user-friendly. \n Thankyou`
-                    sendMail(sub, body, email)
+                    let body = `Dear ${userData[0].username},
+
+                    Thanks for Login again API ACE, Welcomes you to our app! We are thrilled to have you join our community and we hope that you will find our app to be a valuable tool for your needs.
+                    
+                    Our app has been designed to be user-friendly and intuitive, with a range of features and functions.
+                    
+                    Thank you again for choosing API ACE and we hope you enjoy using our app!
+                    
+                    Best regards,
+                    API ACE`
+                    // sendMail(sub, body, email)
 
                     res.status(200).send({
                         "ok": true,
                         "message": "Log-In Successfully",
-                        "username": userData.username,
+                        "username": userData[0].username,
                         "token": token,
                         "re_token": re_token
                     })
@@ -97,7 +113,7 @@ userRouter.post("/login", async (req, res) => {
 
 
 userRouter.get("/logout", async (req, res) => {
-    const token = await client.get('JWTtoken')
+    const token = await client.get('token')
     // const token = req.headers.authorization;
 
     try {
@@ -105,6 +121,7 @@ userRouter.get("/logout", async (req, res) => {
             await client.lPush('BlackListed', token, { EX: 604800 })
 
             res.status(200).send({
+                "ok":true,
                 "message": "Log-Out Successfull"
             })
         } else {

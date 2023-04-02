@@ -29,9 +29,8 @@ const client_secret = "874445b01f5d0eac1d7c7baea42eea96da114db5"
 const path = require("path");
 const filePath = path.join(
     __dirname,
-    "..",
-    "frontend",
-    "login.html"
+    "..","/..",
+    "/api_network.html",
 );
 
 
@@ -46,8 +45,8 @@ app.use("/", userRouter)
 
 
 app.get("/", (req, res) => {
-    // res.sendFile(filePath)
-    res.send("welcome")
+    res.sendFile(filePath)
+    // res.send("welcome")
 })
 
 
@@ -94,10 +93,10 @@ app.get("/auth/github", async (req, res) => {
     const userData = await userModel.find({ email })
     if (userData.length > 0) {
 
-        let sub = `Welcome to API ACE`
-        let body = `This is Greeting from API ACE, Hope your experience with
-                API ACE will be great and user-friendly. \n Thankyou`
-        sendMail(sub, body, email)
+        // let sub = `Welcome to API ACE`
+        // let body = `This is Greeting from API ACE, Hope your experience with
+        //         API ACE will be great and user-friendly. \n Thankyou`
+        // sendMail(sub, body, email)
 
         const token = jwt.sign({ "id": userData[0]._id }, "normal", { expiresIn: '24h' })
         await client.set('token', token, { EX: 86400 })
@@ -111,10 +110,10 @@ app.get("/auth/github", async (req, res) => {
         })
         await user.save()
 
-        let sub = `Welcome to API ACE`
-        let body = `This is Greeting from API ACE, Hope your experience with
-                API ACE will be great and user-friendly. \n Thankyou`
-        sendMail(sub, body, email)
+        // let sub = `Welcome to API ACE`
+        // let body = `This is Greeting from API ACE, Hope your experience with
+        //         API ACE will be great and user-friendly. \n Thankyou`
+        // sendMail(sub, body, email)
 
         const userData = await userModel.find({ email })
 
