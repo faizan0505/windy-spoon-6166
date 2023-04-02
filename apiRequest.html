@@ -127,4 +127,38 @@
 <script>
   let user_name = JSON.parse(localStorage.getItem("username"));
   document.getElementById("naam").innerHTML = user_name || "Welcome";
+
+  document.querySelector("#sendBtn").addEventListener("click", async () => {
+    try {
+      let urlAndMethodForm = document.querySelector("#urlAndMethodForm");
+      let method = urlAndMethodForm.methods.value;
+      let url = urlAndMethodForm.apiSearch.value;
+
+      if (url == "") {
+        return
+      } else {
+        let apiData = {
+          method,
+          url
+        };
+
+        await fetch("http://localhost:4500/addapi", {
+          method: 'POST',
+          headers: {
+            "Content-type": "application/json"
+          },
+          body: JSON.stringify(apiData)
+        })
+          .then(async (result) => {
+            const data = await result.json();
+          }).catch((err) => {
+            console.log(err);
+          });
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  })
+
 </script>
