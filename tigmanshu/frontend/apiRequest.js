@@ -3,6 +3,9 @@
 let noneBtn = document.querySelector("#noneBtn");
 let jsonBtn = document.querySelector("#jsonBtn");
 let headersBtn = document.querySelector("#headersBtn");
+let sp1 = document.getElementById("span1")
+let sp2 = document.getElementById("span2")
+let sp3 = document.getElementById("span3")
 
 let reqDataDiv = document.querySelector("#reqData");
 
@@ -17,23 +20,28 @@ let jsonData = [];
 
 // ****************************************************None section****************************************************************
 function initialNoneBtnColor() {
-  noneBtn.style.backgroundColor = "orange";
-  noneBtn.style.color = "white";
-  noneBtn.style.padding = "5px";
+  // noneBtn.style.backgroundColor = "orange";
+  noneBtn.style.color = "#fb9820";
+  sp1.style.border = "1px #fb9820 solid";
+  // noneBtn.style.padding = "5px";
 }
 
 initialNoneBtnColor();
 noneBtn.addEventListener("click", () => {
   // style
   reqDataDiv.innerHTML = null;
-  noneBtn.style.backgroundColor = "orange";
-  noneBtn.style.color = "white";
+  // noneBtn.style.backgroundColor = "orange";
+  noneBtn.style.color = "#fb9820";
+  sp1.style.border = "1px #fb9820 solid";
+
   jsonBtn.style.backgroundColor = "white";
   headersBtn.style.backgroundColor = "white";
 
   jsonBtn.style.color = "black";
   headersBtn.style.color = "black";
 
+  sp2.style.border = "0px";
+  sp3.style.border = "0px";
   // adding content
   reqDataDiv.innerHTML = `<p style="text-align: center">This request doesn't have a body</p>`;
 });
@@ -42,14 +50,19 @@ noneBtn.addEventListener("click", () => {
 headersBtn.addEventListener("click", () => {
   // style
   // reqDataDiv.innerHTML = null;
-  headersBtn.style.backgroundColor = "orange";
-  headersBtn.style.color = "white";
+  // headersBtn.style.backgroundColor = "orange";
+  headersBtn.style.color = "#fb9820";
+  sp2.style.border = "1px #fb9820 solid";
+  sp2.style.width = "70px"
 
   jsonBtn.style.backgroundColor = "white";
   noneBtn.style.backgroundColor = "white";
 
   jsonBtn.style.color = "black";
   noneBtn.style.color = "black";
+
+  sp1.style.border = "0px";
+  sp3.style.border = "0px";
 
   // content
   let HeadersTR = null;
@@ -113,8 +126,9 @@ function headersTableFunc() {
 
 // ****************************************************Json section****************************************************************
 jsonBtn.addEventListener("click", () => {
-  jsonBtn.style.backgroundColor = "orange";
-  jsonBtn.style.color = "white";
+  // jsonBtn.style.backgroundColor = "orange";
+  jsonBtn.style.color = "#fb9820";
+  sp3.style.border = "1px #fb9820 solid";
 
   headersBtn.style.backgroundColor = "white";
 
@@ -123,6 +137,8 @@ jsonBtn.addEventListener("click", () => {
   noneBtn.style.color = "black";
 
   headersBtn.style.color = "black";
+  sp1.style.border = "0px";
+  sp2.style.border = "0px";
 
   // e.preventDefault();
   reqDataDiv.innerHTML = null;
